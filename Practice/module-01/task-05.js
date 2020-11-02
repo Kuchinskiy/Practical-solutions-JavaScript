@@ -18,67 +18,67 @@
 * Ямайка - 120 кредитов
 */
 
-// const CHINA = 'China';
-// const CHILI = 'Chili';
-// const AUSTRALIA = 'Australia';
-// const INDIA = 'India';
-// const JAMAICA = 'Jamaica';
-// const UKRAINE = 'Ukraine';
+const CHINA = 'China';
+const CHILI = 'Chili';
+const AUSTRALIA = 'Australia';
+const INDIA = 'India';
+const JAMAICA = 'Jamaica';
+const UKRAINE = 'Ukraine';
 
-// const priceChina = 100;
-// const priceChili = 250;
-// const priceAustralia = 170;
-// const priceIndia = 80;
-// const priceJamaica = 120;
-// const priceUkraine = 130;
+const priceChina = 100;
+const priceChili = 250;
+const priceAustralia = 170;
+const priceIndia = 80;
+const priceJamaica = 120;
+const priceUkraine = 130;
 
-// let price;
+let price;
 
-// const PRINT_COUNTRY = 'To which country would you like to arrange delivery:';
-// const CANCEL = 'Canceled by user!';
-// const NOT_DELIVERY = 'Delivery is not available in your country !!!';
+const PRINT_COUNTRY = 'To which country would you like to arrange delivery:';
+const CANCEL = 'Canceled by user!';
+const NOT_DELIVERY = 'Delivery is not available in your country !!!';
 
-// let message = prompt(PRINT_COUNTRY);
+let message = prompt(PRINT_COUNTRY);
 
-// if (message === null) {
-//     message = CANCEL;
-// } else {
-//     const nameCountry = `${message[0].toUpperCase() + message.slice(1).toLowerCase()}`;
-//     message = nameCountry;
+if (message === null) {
+    message = CANCEL;
+} else {
+    const nameCountry = `${message[0].toUpperCase() + message.slice(1).toLowerCase()}`;
+    message = nameCountry;
 
-//     switch (nameCountry) {
-//         case CHINA:
-//             price = priceChina;
-//             break;
+    switch (nameCountry) {
+        case CHINA:
+            price = priceChina;
+            break;
 
-//         case CHILI:
-//             price = priceChili;
-//             break;
+        case CHILI:
+            price = priceChili;
+            break;
 
-//         case AUSTRALIA:
-//             price = priceAustralia;
-//             break;
+        case AUSTRALIA:
+            price = priceAustralia;
+            break;
 
-//         case INDIA:
-//             price = priceIndia;
-//             break;
+        case INDIA:
+            price = priceIndia;
+            break;
 
-//         case JAMAICA:
-//             price = priceJamaica;
-//             break;
+        case JAMAICA:
+            price = priceJamaica;
+            break;
 
-//         case UKRAINE:
-//             price = priceUkraine;
-//             break;
+        case UKRAINE:
+            price = priceUkraine;
+            break;
 
-//         default:
-//             message = NOT_DELIVERY;
-//             break;
-//     }
-//     if (price > 0) {
-//         message = `Delivery to ${message} will cost ${price} credits`;
-//     }
-// }
+        default:
+            message = NOT_DELIVERY;
+            break;
+    }
+    if (price > 0) {
+        message = `Delivery to ${message} will cost ${price} credits`;
+    }
+}
 
-// alert(message);
+alert(message);
 

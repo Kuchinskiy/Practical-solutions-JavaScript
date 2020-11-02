@@ -13,11 +13,11 @@
 */
 
 
-// const total = 100;
-// const ordered = 50; // 20, 80 и 130
+const total = 100;
+const ordered = 50; // 20, 80 и 130
 
-// if (ordered > total) {
-//     console.log('На складе недостаточн товаров!');
-// } else {
-//     console.log('Заказ оформлен, с вами свяжется менеджер.');
-// }
+if (ordered > total) {
+    console.log('На складе недостаточн товаров!');
+} else {
+    console.log('Заказ оформлен, с вами свяжется менеджер.');
+}

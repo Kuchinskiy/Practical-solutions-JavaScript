@@ -15,23 +15,23 @@
 * После всех проверок вывести в alert значение переменной message.
 */
 
-// const ADMIN_PASSWORD = 'jqueryismyjam';
-// let message;
+const ADMIN_PASSWORD = 'jqueryismyjam';
+let message;
 
-// let userAdmin = prompt('Please enter your password:');
+let userAdmin = prompt('Please enter your password:');
 
-// if (userAdmin === null) {
-//     message = 'Отменено пользователем!';
-// } else {
-//     switch (userAdmin) {
-//     case ADMIN_PASSWORD:
-//         message = 'Добро пожаловать!';
-//         break;
+if (userAdmin === null) {
+    message = 'Отменено пользователем!';
+} else {
+    switch (userAdmin) {
+    case ADMIN_PASSWORD:
+        message = 'Добро пожаловать!';
+        break;
 
-//     default:
-//         message = 'Доступ запрещен, неверный пароль!';
-//         break;
-//     }
-// }
+    default:
+        message = 'Доступ запрещен, неверный пароль!';
+        break;
+    }
+}
 
-// alert(message);
+alert(message);

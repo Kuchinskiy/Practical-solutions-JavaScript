@@ -19,20 +19,20 @@
 * и вывести сообщение 'Вы купили [число] дроидов, на счету осталось [число] кредитов.'
 */
 
-// const credits = 23580;
-// const pricePerDroid = 3000;
-// let totalPrice;
+const credits = 23580;
+const pricePerDroid = 3000;
+let totalPrice;
 
-// let queryResultNumber = prompt('How many droids would you like to buy? :');
+let queryResultNumber = prompt('How many droids would you like to buy? :');
 
-// if (queryResultNumber === null) {
-//     console.log('Canceled by user!');
-// } else {
-//     totalPrice = Number(queryResultNumber) * pricePerDroid;
+if (queryResultNumber === null) {
+    console.log('Canceled by user!');
+} else {
+    totalPrice = Number(queryResultNumber) * pricePerDroid;
 
-//     if (totalPrice > credits) {
-//         console.log('Insufficient funds in the account!');
-//     } else {
-//         console.log(`You bought ${queryResultNumber} droids, there are credits left on your ${credits - totalPrice} account.`);
-//     }
-// }
+    if (totalPrice > credits) {
+        console.log('Insufficient funds in the account!');
+    } else {
+        console.log(`You bought ${queryResultNumber} droids, there are credits left on your ${credits - totalPrice} account.`);
+    }
+}
