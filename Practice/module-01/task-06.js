@@ -19,9 +19,9 @@ let total = 0;
 
 do {
 
-    input = prompt('Введите любое число:');
+    input = prompt('Enter any number:');
     total += Number(input);
 
 } while (input !== null);
 
-alert(`Общая сумма чисел равна: ${total}`);
+alert(`The total sum of the numbers is: ${total}`);
