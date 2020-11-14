@@ -28,5 +28,5 @@ let idArr = arrObj.reduce((acc, item) => {
     return acc;
 }, []);
 
-// console.log(idArr);
-
+// console.log(idArr); // [678876, 234432, 987654]
+// console.log(Array.isArray(idArr)); // true
