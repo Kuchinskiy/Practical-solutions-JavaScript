@@ -29,21 +29,3 @@ let idArr = arrObj.reduce((acc, item) => {
 
 // console.log(idArr); // [678876, 234432, 987654]
 // console.log(Array.isArray(idArr)); // true
-
-// Методы массивов : shift, unshift, slice.
-
-const array = [4, 5, 7, 8];
-console.log(array);
-
-let arrDel= array.shift();
-
-console.log(arrDel); // переиндексация массива, удаление элемента с начала массива;
-console.log(array); // [5, 7, 8] -- элемент '4' уже отсутствует;
-
-let addArrElem = array.unshift('add');
-console.log(array);
-
-let arrStartEnd = array.slice(0, 2);
-console.log('slice:', arrStartEnd);
-console.log(array);
-
