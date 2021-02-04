@@ -42,3 +42,7 @@ input[type='radio'].visually-hidden {
     clear: both;
 }
 
+body {
+    font-family: 'Karla', sans-serif;
+}
+
