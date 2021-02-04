@@ -43,6 +43,13 @@ input[type='radio'].visually-hidden {
 }
 
 body {
+    min-height: 100vh;
     font-family: 'Karla', sans-serif;
+    background-image: linear-gradient(#e96443, #904e95);
+}
+
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
 }
 
