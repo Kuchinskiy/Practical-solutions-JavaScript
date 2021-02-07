@@ -59,6 +59,7 @@ body {
     padding: 10px;
     list-style: none;
     font-size: 18px;
+    font-weight: bold;
     text-transform: uppercase;
     text-align: center;
 }
@@ -74,6 +75,31 @@ body {
     text-decoration: none;
     color: #424242;
     padding: 15px 30px;
-    background-color: #fff;
 }
 
+.menu-item > a:hover,
+.submenu-item > a:hover {
+    color: #ffffff;
+    background: rgb(255, 127, 80);
+    text-decoration: underline;
+}
+
+/* делаем невидимым .submenu  */
+.submenu {
+    display: none;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* делаем .submenu видимым  */
+.menu-item:hover > .submenu {
+    display: block;
+}
+
+.submenu-item {
+    white-space: nowrap;
+}
