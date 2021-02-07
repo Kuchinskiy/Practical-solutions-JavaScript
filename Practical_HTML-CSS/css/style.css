@@ -1,7 +1,8 @@
 /* DEFAULT */
 
 * {
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
+    margin: 0;
 }
 
 html {
@@ -45,11 +46,34 @@ input[type='radio'].visually-hidden {
 body {
     min-height: 100vh;
     font-family: 'Karla', sans-serif;
-    background-image: linear-gradient(#e96443, #904e95);
+    background-image: linear-gradient(#904e95, #e96443);
 }
 
 .wrapper {
     width: 1200px;
     margin: 0 auto;
+}
+
+
+.menu {
+    padding: 10px;
+    list-style: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.menu-item {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-item > a,
+.submenu-item > a {
+    display: inline-block;
+    text-decoration: none;
+    color: #424242;
+    padding: 15px 30px;
+    background-color: #fff;
 }
 
