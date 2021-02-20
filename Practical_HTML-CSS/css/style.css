@@ -87,6 +87,12 @@ body {
     text-decoration: underline;
 }
 
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover {
+    display: block;
+}
+
 /* делаем невидимым .submenu  */
 .submenu {
     display: none;
