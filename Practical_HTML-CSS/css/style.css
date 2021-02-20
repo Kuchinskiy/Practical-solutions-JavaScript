@@ -54,7 +54,6 @@ body {
     margin: 0 auto;
 }
 
-
 .menu {
     padding: 10px;
     list-style: none;
@@ -74,11 +73,11 @@ body {
     display: inline-block;
     text-decoration: none;
     color: #424242;
-    padding: 15px 30px;
+    padding: 15px 40px;
 }
 
 .menu-item > a:hover {
-    background: rgb(255, 127, 80);
+    background: rgb(241, 124, 82);
 }
 
 .menu-item > a:hover,
