@@ -87,6 +87,7 @@ body {
     text-decoration: underline;
 }
 
+/* делаем табуляцию для фокусировки */
 ul li:hover > ul,
 ul li:focus-within > ul,
 ul li ul:hover {
