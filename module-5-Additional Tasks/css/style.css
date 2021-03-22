@@ -65,3 +65,67 @@ html {
     width: 100%;
     height: 100vh;
 }
+
+
+/* Module-5 Additional Task */
+/* Task-02 */
+
+.parent {
+    width: 400px;
+    height: 400px;
+    background-color: rgb(66, 66, 66);
+}
+
+.child-bg-1 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(0, 0, 255);
+}
+
+.child-bg-2 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(0, 128, 128);
+}
+
+.child-bg-3 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 192, 203);
+}
+
+.child-bg-4 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 99, 71);
+}
+
+.child-bg-5 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 69, 0);
+}
+
+.child-bg-6 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(138, 24, 138);
+}
+
+.child-bg-7 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(173, 255, 47);
+}
+
+.child-bg-8 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 255, 0);
+}
+
+.child-bg-9 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(0, 174, 255);
+}
