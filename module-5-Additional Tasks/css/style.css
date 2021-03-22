@@ -71,60 +71,84 @@ html {
 /* Task-02 */
 
 .parent {
+    position: relative;
     width: 400px;
     height: 400px;
     background-color: rgb(66, 66, 66);
 }
 
 .child-bg-1 {
+    position: absolute;
     width: 100px;
     height: 100px;
     background-color: rgb(0, 0, 255);
 }
 
 .child-bg-2 {
+    position: absolute;
+    right: 0;
+    left: 38%;
     width: 100px;
     height: 100px;
     background-color: rgb(0, 128, 128);
 }
 
 .child-bg-3 {
+    position: absolute;
+    right: 0;
     width: 100px;
     height: 100px;
     background-color: rgb(255, 192, 203);
 }
 
 .child-bg-4 {
+    position: absolute;
+    top: 38%;
     width: 100px;
     height: 100px;
     background-color: rgb(255, 99, 71);
 }
 
 .child-bg-5 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100px;
     height: 100px;
     background-color: rgb(255, 69, 0);
 }
 
 .child-bg-6 {
+    position: absolute;
+    top: 38%;
+    left: 75%;
     width: 100px;
     height: 100px;
     background-color: rgb(138, 24, 138);
 }
 
 .child-bg-7 {
+    position: absolute;
+    top: 75%;
     width: 100px;
     height: 100px;
     background-color: rgb(173, 255, 47);
 }
 
 .child-bg-8 {
+    position: absolute;
+    top: 75%;
+    left: 38%;
     width: 100px;
     height: 100px;
     background-color: rgb(255, 255, 0);
 }
 
 .child-bg-9 {
+    position: absolute;
+    right: 0;
+    top: 75%;
     width: 100px;
     height: 100px;
     background-color: rgb(0, 174, 255);
