@@ -9,16 +9,16 @@
 */
 
 const formatString = function (string) {
-	// for (let i = 0; i < string.length; i += 1) { // в цикле "for" и еще одной проверке "if(условия)" нет надобности,
-	// 	if (string.length < 40) { // так как такой подход создает перизбыток в ненужном коде;
-	// 		return string;
-	// 	}
+	for (let i = 0; i < string.length; i += 1) { // в цикле "for" и еще одной проверке "if(условия)" нет надобности,
+		if (string.length < 40) { // так как такой подход создает перизбыток в ненужном коде;
+			return string;
+		}
 
 		if (string.length > 40) {
 			return (`${string.slice(0, 40) + '...'}`);
-		// }
+		}
 	}
-	return string; // условие if(a) не выполняется и исполнение кода переходит далее;
+	return string; // если, условие if(a) не выполняется то исполнение кода переходит далее;
 };
 
 console.log(formatString('Curabitur ligula sapien.'));
