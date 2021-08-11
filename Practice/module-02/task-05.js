@@ -16,6 +16,15 @@
 */
 
 let input;
-const numbers = [];
 let total = 0;
 
+const calculator = function () {
+		input = Number(prompt('Enter number :'));
+		const numbers = [];
+		numbers.push(input);
+
+		// console.log(numbers);
+
+};
+
+// calculator();
