@@ -20,15 +20,24 @@ let total = 0;
 
 const calculator = function () {
 	do {
+
 		input = prompt('Enter number :');
 		const numbers = [];
-		numbers.push(Number(input));
+		numbers.push(input);
 		// console.log(numbers);
 
-
+		for (let total of numbers) {
+			total = Number(input);
+			// console.log(total);
+			return (`Общая сумма чисел равна: ${total}`);
+		}
+		
+		// console.log(numbers);
+		
 	} while (input !== null);
 
-
+	// return total;
 };
 
+// console.log(calculator());
 // calculator();
