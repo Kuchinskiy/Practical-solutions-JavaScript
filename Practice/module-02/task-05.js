@@ -17,27 +17,43 @@
 
 let input;
 let total = 0;
+const numbers = [];
 
 const calculator = function () {
 	do {
 
 		input = prompt('Enter number :');
-		const numbers = [];
-		numbers.push(input);
-		// console.log(numbers);
+		numbers.push(Number(input));
+		console.log(numbers);
 
-		for (let total of numbers) {
-			total = Number(input);
-			// console.log(total);
-			return (`Общая сумма чисел равна: ${total}`);
+		// for (const number of numbers) {
+		// 	total += number;
+		// }
+		// return total;
+
+		// total += Number(input);
+		// console.log(total);
+		for (let i = 0; i < numbers.length; i++) {
+			total += numbers[i];
+			// return (`Общая сумма чисел равна: ${total}`);
+			console.log(total);
 		}
-		
-		// console.log(numbers);
-		
 	} while (input !== null);
-
-	// return total;
 };
 
-// console.log(calculator());
+console.log(calculator());
 // calculator();
+
+// do {
+// 	input = prompt('Введите пожалуйста число :');
+// 	total += Number(input);
+// } while (input !== null);
+
+// alert(`Общая сумма чисел равна : ${total}`);
+
+const arr = [];
+for (let i = 1; i <= 5; i++) {
+	arr.push(i);
+}
+
+console.log(arr);
