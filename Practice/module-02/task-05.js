@@ -19,11 +19,15 @@ let input;
 let total = 0;
 
 const calculator = function () {
-		input = Number(prompt('Enter number :'));
+	do {
+		input = prompt('Enter number :');
 		const numbers = [];
-		numbers.push(input);
-
+		numbers.push(Number(input));
 		// console.log(numbers);
+
+
+	} while (input !== null);
+
 
 };
 
