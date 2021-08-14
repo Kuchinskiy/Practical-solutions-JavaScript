@@ -19,41 +19,28 @@ let input;
 let total = 0;
 const numbers = [];
 
-const calculator = function () {
+
+const getNumbers = function () {
 	do {
-
 		input = prompt('Enter number :');
-		numbers.push(Number(input));
-		console.log(numbers);
-
-		// for (const number of numbers) {
-		// 	total += number;
-		// }
-		// return total;
-
-		// total += Number(input);
-		// console.log(total);
-		for (let i = 0; i < numbers.length; i++) {
-			total += numbers[i];
-			// return (`Общая сумма чисел равна: ${total}`);
-			console.log(total);
-		}
+			numbers.push(Number(input));
 	} while (input !== null);
+
+	return numbers;
 };
+// Проверка работоспособности функции getNumbers():
+// console.log(getNumbers());
 
-console.log(calculator());
-// calculator();
 
-// do {
-// 	input = prompt('Введите пожалуйста число :');
-// 	total += Number(input);
-// } while (input !== null);
+const calcNumbers = function (arr) {
+		for (let i = 0; i < arr.length; i += 1) {
+			total += arr[i];
+		}
+		return total;
+	};
+// Проверка работоспособности функции calcNumbers():
+// console.log(`Общая сумма чисел равна : ${calcNumber(numbers)}`);
 
-// alert(`Общая сумма чисел равна : ${total}`);
-
-const arr = [];
-for (let i = 1; i <= 5; i++) {
-	arr.push(i);
-}
-
-console.log(arr);
+// Показываем ввыод в консоль с сообщением :
+const showMessage = calcNumbers(getNumbers());
+console.log(`Общая сумма чисел равна : ${showMessage}`);
