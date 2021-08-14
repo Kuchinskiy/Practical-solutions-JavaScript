@@ -42,12 +42,5 @@ const calcNumbers = function (arr) {
 // console.log(`Общая сумма чисел равна : ${calcNumber(numbers)}`);
 
 // Показываем вывод в консоль с сообщением :
-// const showMessage = calcNumbers(getNumbers());
-// console.log(`Общая сумма чисел равна : ${showMessage}`);
-
-const arr = [2, 4, 5, 7, 9]
-for (const num of arr) {
-	total += num;
-}
-
-console.log('Итого :', total);
+const showMessage = calcNumbers(getNumbers());
+console.log(`Общая сумма чисел равна : ${showMessage}`);
