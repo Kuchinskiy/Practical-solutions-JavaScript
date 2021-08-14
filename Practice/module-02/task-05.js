@@ -41,6 +41,13 @@ const calcNumbers = function (arr) {
 // Проверка работоспособности функции calcNumbers():
 // console.log(`Общая сумма чисел равна : ${calcNumber(numbers)}`);
 
-// Показываем ввыод в консоль с сообщением :
-const showMessage = calcNumbers(getNumbers());
-console.log(`Общая сумма чисел равна : ${showMessage}`);
+// Показываем вывод в консоль с сообщением :
+// const showMessage = calcNumbers(getNumbers());
+// console.log(`Общая сумма чисел равна : ${showMessage}`);
+
+const arr = [2, 4, 5, 7, 9]
+for (const num of arr) {
+	total += num;
+}
+
+console.log('Итого :', total);
