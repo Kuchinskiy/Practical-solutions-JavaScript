@@ -10,7 +10,7 @@
 до тех пор, пока пользователь не нажмет Cancel в prompt.
 
 -После того как пользователь прекратил ввод нажав Cancel, если массив не пустой, 
-необходимо посчитать сумму всех элементов массива и записать ее в переменную total. 
+необходимо посчитать сумму всех элементов массива и записать ее в переменную totalShowMessage. 
 Используй цикл for или for...of. 
 После чего в консоль выведи строку 'Общая сумма чисел равна [сумма]'.
 */
@@ -42,5 +42,5 @@ const calcNumbers = function (arr) {
 // console.log(`Общая сумма чисел равна : ${calcNumber(numbers)}`);
 
 // Показываем вывод в консоль с сообщением :
-const showMessage = calcNumbers(getNumbers());
-console.log(`Общая сумма чисел равна : ${showMessage}`);
+const totalShowMessage = calcNumbers(getNumbers());
+console.log(`Общая сумма чисел равна : ${totalShowMessage}`);
