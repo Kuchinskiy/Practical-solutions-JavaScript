@@ -25,27 +25,26 @@ P.S Для проверки корректности вычесления - по
 в правильности работы функции.
 */
 
-const maxWaterBottles = (fullBottles, emptyBottles) => {
-	return fullBottles + Math.ceil(fullBottles / emptyBottles);
+// Вариант со сбоями в корректности работы:
+const maxWaterBottles = (fullBottles, exchengeBottles) => {
+	return fullBottles + Math.ceil(fullBottles / exchengeBottles);
 };
 
-console.log(maxWaterBottles(13, 4)); // 17
-console.log(maxWaterBottles(15, 4)); // 19
-console.log(maxWaterBottles(17, 4)); // 22
+console.log(maxWaterBottles(100, 4)); // 125 <<-- НЕ ВЕРНО !!!
 
 
-// Решение более наглядно показывающее происходящее:
-const maxBeerBottles = (N, K) => {
-	let [result, empty, full] = [0, 0, N];
+// Конструкция работающая корректно при любых раскладах чисел:
+const maxBeerBottles = (fullBottles, exchengeBottles) => {
+	let [result, empty, full] = [0, 0, fullBottles];
 
 	while (full > 0) {
 	result += full;
 	empty += full;
 
-	full = Math.floor(empty / K);
-	empty = empty % K;
+	full = Math.floor(empty / exchengeBottles);
+	empty = empty % exchengeBottles;
 	}
 	return result;
 };
 
-// console.log(maxBeerBottles(15, 4)); // 19
+console.log(maxBeerBottles(100, 4)); // 133 <<-- ВЕРНО !!!
