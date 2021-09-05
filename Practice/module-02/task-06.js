@@ -46,8 +46,13 @@ isLoginUnique и isLoginValid в нашем случае.
 const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
 
 const isLoginValid = function(login) {
-	// твой код
+		if (login.length >= 4 && login.length <= 16) {
+			return true;
+		}
+	return false;
 };
+
+// console.log(isLoginValid('Aj4'));
 
 const isLoginUnique = function(allLogins, login) {
 	// твой код
