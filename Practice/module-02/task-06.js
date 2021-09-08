@@ -47,22 +47,20 @@ const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
 
 const isLoginValid = function(login) {
 	return (login.length >= 4 && login.length <= 16 ? true : false);
-
-	// 	if (login.length >= 4 && login.length <= 16) {
-	// 		return true;
-	// 	}
-	// return false;
 };
 
-// console.log(isLoginValid('Aj4K'));
+// console.log(isLoginValid('Aj4'));
 
 const isLoginUnique = function(allLogins, login) {
-	for (const login of logins) {
-		if (allLogins === login) {
-			
-		}
+		if (allLogins.includes(login)) {
+			return false;
+			// alert('Невозможно,добавить и использовать такой логин!!!');
 	}
+	return true;
+	// alert('Возможно, добавить и использовать такой логин!!!');
 };
+
+// console.log(isLoginUnique(logins, 'qwerty123GPP')); // true
 
 const addLogin = function(allLogins, login) {
 	// твой код
