@@ -80,4 +80,3 @@ obj['7:20'] = 'get up';
 // console.log(obj);
 // console.log(Object.keys(obj).length); // 1 === 0 result -->>  false
 // console.log(isEmpty(obj));
-
