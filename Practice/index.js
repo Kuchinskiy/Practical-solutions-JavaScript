@@ -62,6 +62,7 @@ let idArr = arrObj.reduce((acc, item) => {
 
 // =============================================================
 
+// Проверка на наличие свойств в объекте (пар ключ:значение)
 // Напишите функцию isEmpty(object), которая возвращает true, 
 // если у объекта нет свойств, иначе false.
 let obj = {};
@@ -70,12 +71,13 @@ const isEmpty = obj => {
 	return Object.keys(obj).length === 0 ? true : false;
 };
 
-console.log(obj);
-console.log(Object.keys(obj).length); // 0 === 0 result -->>  true
-console.log(isEmpty(obj));
+// console.log(obj);
+// console.log(Object.keys(obj).length); // 0 === 0 result -->>  true
+// console.log(isEmpty(obj));
 
 obj['7:20'] = 'get up';
 
-console.log(obj);
-console.log(Object.keys(obj).length); // 1 === 0 result -->>  false
-console.log(isEmpty(obj));
+// console.log(obj);
+// console.log(Object.keys(obj).length); // 1 === 0 result -->>  false
+// console.log(isEmpty(obj));
+
