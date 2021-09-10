@@ -59,3 +59,23 @@ let idArr = arrObj.reduce((acc, item) => {
 
 // console.log(idArr); // [678876, 234432, 987654]
 // console.log(Array.isArray(idArr)); // true
+
+// =============================================================
+
+// Напишите функцию isEmpty(object), которая возвращает true, 
+// если у объекта нет свойств, иначе false.
+let obj = {};
+
+const isEmpty = obj => {
+	return Object.keys(obj).length === 0 ? true : false;
+};
+
+console.log(obj);
+console.log(Object.keys(obj).length); // 0 === 0 result -->>  true
+console.log(isEmpty(obj));
+
+obj['7:20'] = 'get up';
+
+console.log(obj);
+console.log(Object.keys(obj).length); // 1 === 0 result -->>  false
+console.log(isEmpty(obj));
