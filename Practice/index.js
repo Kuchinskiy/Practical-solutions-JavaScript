@@ -80,3 +80,29 @@ obj['7:20'] = 'get up';
 // console.log(obj);
 // console.log(Object.keys(obj).length); // 1 === 0 result -->>  false
 // console.log(isEmpty(obj));
+
+// =============================================================
+
+// Операция ...rest
+// Используя ее собрать все аргументы в массив и путем сложения вернуть строку,
+// 'Общая сумма : ${число}'
+
+const add = function (...args) {
+	console.log(args); // массив всех аргументов
+	
+	let total = 0;
+
+	for (let i = 0; i < args.length; i += 1) {
+		total += args[i];
+	}
+
+	// for (const arg of args) {
+	// 	total += arg;
+	// }
+	return `Общая сумма: ${total}`;
+};
+
+console.log(add(1, 2, 3));
+console.log(add(1, 2, 3, 4, 5));
+console.log(add(1, 2, 3, 4, 5, 6, 7, 8, 9));
+
