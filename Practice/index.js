@@ -89,7 +89,10 @@ obj['7:20'] = 'get up';
 
 const add = function (...args) {
 	console.log(args); // массив всех аргументов
-	
+
+// Преобразовать псевдомассив в обычный массив возможно:
+	// const args = Array.from(arguments); // при этом функция должна быть анонимна(без подписи)
+
 	let total = 0;
 
 	for (let i = 0; i < args.length; i += 1) {
