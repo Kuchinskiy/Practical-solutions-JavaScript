@@ -6,19 +6,21 @@
 */
 
 const countProps = function(obj) {
-	let total = 0;
+	return Object.keys(obj).length;
+// Вариант-2
+	// let total = 0;
 	// for (const key in obj) {
 	// 	if (Object.hasOwnProperty.call(obj, key)) {
 	// 		total += 1;
 	// 	}
 	// }
-
-	for (const key in obj) {
-		if (Object.keys(obj, key).length) {
-			total += 1;
-		}
-	}
-	return total;
+// Вариант-3
+	// for (const key in obj) {
+	// 	if (Object.keys(obj, key).length) {
+	// 		total += 1;
+	// 	}
+	// }
+	// return total;
 };
 
 /*
