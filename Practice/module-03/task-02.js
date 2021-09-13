@@ -28,8 +28,8 @@ console.log(countProps({})); // 0
 console.log(countProps({ name: 'Mango', age: 2 })); // 2
 console.log(countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 })); // 3
 
-// Object.keys(obj).length;-->>> Выполняет внутреннюю итерацию по ключам
-// для вычисления(длины) временного массива и возвращает его длину.
+// Object.keys(obj).length -->>> Выполняет внутреннюю итерацию по ключам всех свойств на объекте
+// для вычисления длины временного массива (возвращает его длину).
 
 // Object.hasOwnProperty.call(obj, key); -->>> метод возвращает только свойства, 
 // установленные для самого объекта.
