@@ -33,8 +33,14 @@ const findBestEmployee = employees => {
 			name = key;
 		}
 	}
-	return `${name}: ${max}`;
-}
+	// return `${name}: ${max}`;
+
+	// Можем вернуть объект с именем сотрудника и к-ом
+	return {
+		name,
+		taskCompleted: max,
+	};
+};
 
 /*
 Вызовы функции для проверки работоспособности твоей реализации.
