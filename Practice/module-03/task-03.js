@@ -20,6 +20,22 @@ let nameEmployee;
 	return `${nameEmployee}: ${maxTasks}`;
 };
 
+
+// Вариант -2 через Object.keys
+const findBestEmployee = employees => {
+	let max = 0;
+	let name;
+	const keys = Object.keys(employees);
+
+	for (const key of keys) {
+		if (max < employees[key]) {
+			max = employees[key];
+			name = key;
+		}
+	}
+	return `${name}: ${max}`;
+}
+
 /*
 Вызовы функции для проверки работоспособности твоей реализации.
 */
