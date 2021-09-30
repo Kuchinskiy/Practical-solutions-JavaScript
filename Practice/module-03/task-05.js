@@ -23,7 +23,7 @@ const getAllPropValues = function(arr, prop) {
 	return arrValues;
 };
 
-// Для корректное проверки наличия свойства в объекте, когда его значением является 'undefined',
+// Для корректной проверки наличия свойства в объекте, когда его значением является 'undefined',
 // используем оператор 'in', иначе проверка через 'if' выдаст неверную информацию 'boolean'(false/true)
 const userInfo = {
 	name: undefined,
