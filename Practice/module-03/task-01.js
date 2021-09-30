@@ -20,6 +20,8 @@ const user = {
 
 // add --key:value
 user['mood'] = 'happy';
+// Также это возможно, сделать через метод Object.assign()
+Object.assign(user, {mood: 'happy'});
 
 // chenge -- values
 user.hobby = 'skydiving';
