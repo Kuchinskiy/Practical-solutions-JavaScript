@@ -23,6 +23,22 @@ const getAllPropValues = function(arr, prop) {
 	return arrValues;
 };
 
+// Для корректное проверки наличия свойства в объекте, когда его значением является 'undefined',
+// используем оператор 'in', иначе проверка через 'if' выдаст неверную информацию 'boolean'(false/true)
+const userInfo = {
+	name: undefined,
+}
+
+// Неверный способ проверки
+if (userInfo.name) {
+	console.log(userInfo.name); // false
+}
+
+// Правильный способ проверки
+if ('name' in userInfo) {
+	console.log(userInfo.name); // true
+}
+
 /*
 Вызовы функции для проверки работоспособности твоей реализации.
 */
