@@ -14,10 +14,10 @@ const products = [
 // console.log(products[0].name);
 
 
-const calculateTotalPrice = function(allProdcuts, productName) {
+const calculateTotalPrice = function(allProducts, productName) {
 	let total = 0;
 
-	for (const product of allProdcuts) {
+	for (const product of allProducts) {
 		if (productName === product.name) {
 			total = product.price * product.quantity;
 		}
@@ -30,4 +30,5 @@ const calculateTotalPrice = function(allProdcuts, productName) {
 */
 
 console.log(calculateTotalPrice(products, 'Радар')); // 5200
-// console.log(calculateTotalPrice(products, 'Дроид')); // 2800
+console.log(calculateTotalPrice(products, 'Дроид')); // 2800
+console.log(calculateTotalPrice(products, 'Захват')); // 2400
