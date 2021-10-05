@@ -113,3 +113,39 @@ const add = function (...args) {
 
 // Деструктиризация
 
+let country = 'Canada';
+let firstname = 'John';
+let lastname = 'Doe';
+// console.log(firstname, lastname, country);
+
+
+const student = {
+	firstname: 'Glad',
+	lastname: 'Chinda',
+	country: 'Nigeria'
+};
+
+// Переназначаем значения firstname(имя) и lastname(фамилия) с помощью - деструктуризации
+// Обязательно добавляем пару круглых скобок, так как - это выражение присваивания
+({ firstname, lastname } = student); // присваеваем новые значения локальным переменным
+
+// console.log(firstname, lastname, country);
+
+// Перестановка местами переменных с помощью деструктиризации, если в этом имеется необходимость.
+
+/*
+Изменяем размер фотографии с портретной на альбомный вариант с помощью деструктиризации.
+Было: 300 х 400, необходимо сделать 400 х 300.
+*/
+
+let width = 300;
+let height = 400;
+const landscape = false;
+
+console.log(`${width} x ${height}`); // 300 x 400
+
+if (!landscape) {
+	// Перестановка локальных переменных
+	[width, height] = [height, width];
+	console.log(`${width} x ${height}`); // 400 x 300
+}
