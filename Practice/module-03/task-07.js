@@ -54,7 +54,9 @@ withdraw(amount) {},
 /*
 Метод возвращает текущий баланс
 */
-getBalance() {},
+getBalance() {
+	return this.balance;
+},
 
 /*
 Метод ищет и возвращает объект транзации по id
@@ -67,3 +69,5 @@ getTransactionDetails(id) {},
 */
 getTransactionTotal(type) {},
 };
+
+console.table(account.getBalance());
