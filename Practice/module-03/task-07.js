@@ -30,7 +30,13 @@ const account = {
 Метод создает и возвращает объект транзакции.
 Принимает сумму и тип транзакции.
 */
-createTransaction(amount, type) {},
+createTransaction(amount, type) {
+	const objTransaction = {
+		amount,
+		type,
+	};
+	return objTransaction;
+},
 
 /*
 Метод отвечающий за добавление суммы к балансу.
@@ -70,4 +76,7 @@ getTransactionDetails(id) {},
 getTransactionTotal(type) {},
 };
 
-console.table(account.getBalance());
+// console.log(account.getBalance());
+
+// Передаем аргументами в метод объекта(функцию) 'сумму' и указываем 'тип' транзакции.
+console.log(account.createTransaction(100, Transaction['DEPOSIT']));
