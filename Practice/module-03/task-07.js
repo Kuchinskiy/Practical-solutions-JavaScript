@@ -25,7 +25,7 @@ const account = {
 
 	// История транзакций
 	transactions: [],
- 
+
 /*
 Метод создает и возвращает объект транзакции.
 Принимает сумму и тип транзакции.
@@ -40,11 +40,14 @@ createTransaction(amount, type) {
 
 /*
 Метод отвечающий за добавление суммы к балансу.
-Принимает сумму танзакции.
+Принимает сумму и тип транзакции.
 Вызывает createTransaction для создания объекта транзакции
 после чего добавляет его в историю транзакций
 */
-deposit(amount) {},
+deposit(amount, type) {
+		this.balance += amount;
+		this.transactions.push(this.createTransaction(amount, type));
+},
 
 /*
 Метод отвечающий за снятие суммы с баланса.
@@ -80,3 +83,7 @@ getTransactionTotal(type) {},
 
 // Передаем аргументами в метод объекта(функцию) 'сумму' и указываем 'тип' транзакции.
 console.log(account.createTransaction(100, Transaction['DEPOSIT']));
+
+// Добавляем сумму к балансу и объект транзакций в историю [{...}]
+account.deposit(450, Transaction['DEPOSIT']);
+console.log(account.transactions);
