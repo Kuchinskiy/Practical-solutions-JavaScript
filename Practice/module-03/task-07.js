@@ -84,6 +84,9 @@ getTransactionTotal(type) {},
 // Передаем аргументами в метод объекта(функцию) 'сумму' и указываем 'тип' транзакции.
 console.log(account.createTransaction(100, Transaction['DEPOSIT']));
 
-// Добавляем сумму к балансу и объект транзакций в историю [{...}]
+// Добавляем сумму к балансу и добавляем объект транзакций в историю [{...}]
 account.deposit(450, Transaction['DEPOSIT']);
 console.log(account.transactions);
+console.log(account.balance);
+
+// 
