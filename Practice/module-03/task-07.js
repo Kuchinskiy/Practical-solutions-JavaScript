@@ -1,7 +1,7 @@
 'use strict';
 
 /*
-* Напиши скрипт управления личным кабинетом интернет банка.
+* Напиши скрипт управления личным кабинетом интернет банкинга.
 * Есть объект account в котором необходимо реализовать методы
 * для работы с балансом и историей транзакций.
 */
@@ -77,13 +77,26 @@ getBalance() {
 /*
 Метод ищет и возвращает объект транзации по id
 */
-getTransactionDetails(id) {},
+getTransactionDetails(id) {
+	for (let i = 0; i < this.transactions.length; i += 1) {
+		const transaction = this.transactions[i];
+
+		if (transaction.id === id) {
+			return transaction;
+		}
+	}
+},
 
 /*
-Метод возвращает количество средств
-определенного типа транзакции из всей истории транзакций
+Метод возвращает количество средств(общая сумма)
+определенного типа транзакции(DEPOSIT или WITHDRAW) из всей истории транзакций
 */
-getTransactionTotal(type) {},
+getTransactionTotal(type) {
+	return this.transactions
+	.filter((el) => el.type === type)
+	.reduce((acc, { amount }) => acc + amount, 0);
+},
+
 };
 
 
@@ -98,12 +111,16 @@ console.log('Текущий баланс счета:', account.getBalance());
 // console.log(account.createTransaction(100, Transaction['DEPOSIT']));
 
 // Добавляем сумму к балансу и объект транзакций в историю [{...}]
-account.deposit(450, Transaction['DEPOSIT']);
+account.deposit(590, Transaction['DEPOSIT']);
 console.log('Добавляем сумму на баланс:', account.balance);
 console.log('История транзакций', account.transactions);
 
 
 // Снимаем сумму наличными с баланса и добавляем объект транзакций в историю [{...}]
-account.withdraw(75, Transaction['WITHDRAW']);
+account.withdraw(175, Transaction['WITHDRAW']);
 console.log('Остаток суммы на балансе:', account.balance);
 console.log('История транзакций', account.transactions);
+
+// 
+console.log(account.getTransactionTotal(Transaction['DEPOSIT']));
+console.log(account.getTransactionTotal(Transaction['WITHDRAW']));
