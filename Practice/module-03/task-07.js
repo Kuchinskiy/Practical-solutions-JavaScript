@@ -99,6 +99,20 @@ getTransactionTotal(type) {
 
 };
 
+// Работа встроеного метода(функции) .filter((el) => el.type === type) под капотом:
+const filter = function(arr, callElemType) {
+	const total = [];
+
+	for (const el of arr) {
+		const passed = callElemType(el);
+
+		if (passed) {
+			total.push(el);
+		}
+	}
+	return total;
+};
+
 
 /*
 Вызовы методов объекта(функций) для проверки работоспособности твоей реализации.
@@ -121,6 +135,6 @@ account.withdraw(175, Transaction['WITHDRAW']);
 console.log('Остаток суммы на балансе:', account.balance);
 console.log('История транзакций', account.transactions);
 
-// 
-console.log(account.getTransactionTotal(Transaction['DEPOSIT']));
-console.log(account.getTransactionTotal(Transaction['WITHDRAW']));
+// Возвращаем общую сумму определенного типа транзакции 'DEPOSIT' или 'WITHDRAW'
+console.log('К-во средств по транзакциям "DEPOSIT":', account.getTransactionTotal(Transaction['DEPOSIT']));
+console.log('К-во средств по транзакциям "WITHDRAW":', account.getTransactionTotal(Transaction['WITHDRAW']));
