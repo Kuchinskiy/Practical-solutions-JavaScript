@@ -142,10 +142,23 @@ let width = 300;
 let height = 400;
 const landscape = false;
 
-console.log(`${width} x ${height}`); // 300 x 400
+// console.log(`${width} x ${height}`); // 300 x 400
 
 if (!landscape) {
 	// Перестановка локальных переменных
 	[width, height] = [height, width];
-	console.log(`${width} x ${height}`); // 400 x 300
+	// console.log(`${width} x ${height}`); // 400 x 300
 }
+
+// =============================================================
+
+// [[Scope]]
+// [Environment]: Global
+const fnA = (a) => console.log(a);
+
+const outFn = () => {
+	const a = 777;
+	fnA(a); // прокидываем аргументом "а", чтобы иметь к ней доступ в лексическом окружении 'outFn: f'
+};
+
+outFn();
