@@ -154,11 +154,18 @@ if (!landscape) {
 
 // [[Scope]]
 // [Environment]: Global
+// Parent: Global
 const fnA = (a) => console.log(a);
 
+// [Environment]: Global
+// Parent: Global
 const outFn = () => {
+	// Parent: Global
 	const a = 777;
 	fnA(a); // прокидываем аргументом "а", чтобы иметь к ней доступ в лексическом окружении 'outFn: f'
+	// outFn env
+	// Parent: Global
+	// a: 777, fnA: f
 };
 
 outFn();
