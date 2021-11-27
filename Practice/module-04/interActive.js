@@ -4,7 +4,7 @@
 Анимация элементов HTML с помощью setInterval
 */
 
-// Временная функция 
+// Временная функция вызваная при необходимости события
 heading.onclick = function() {
 	// запомнить время начала
 	let start = Date.now();
@@ -13,11 +13,9 @@ heading.onclick = function() {
 		//сколько времени прошло с начала анимации от 0 до 2000ms
 	let timePassed = Date.now() - start;
 	//расстояние на которое необходимо сдивинуть элемент (2000ms / 10px = 200px)
-	// left - изменяет значение от 0рх до 200рх
+	// style.left - изменяет значение от 0рх до 200рх
 	heading.style.left = timePassed / 10 + 'px';
 	//закончить анимацию через 2 секунды
-	if (timePassed > 2000) {
-		clearInterval(timer);
-	};
+	if (timePassed > 2000) {clearInterval(timer)};
 	}, 10);
 };

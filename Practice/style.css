@@ -1,8 +1,22 @@
 #heading {
 	position: relative;
 	cursor: pointer;
+	color: #ac1c1c77;
 }
 
-/* #btn-slider {
+#btn-slider {
+	width: 150px;
+	height: 30px;
+	border: none;
+	color: #000;
 	cursor: pointer;
-} */
+	font-weight: bold;
+	background-color: aqua;
+	border-radius: 30px;
+	box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+}
+
+#btn-slider:hover {
+	color: #fff;
+	background-color: palevioletred
+}
