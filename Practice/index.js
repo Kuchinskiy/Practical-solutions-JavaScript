@@ -172,3 +172,13 @@ outFn();
 
 // =============================================================
 
+function getHello() {
+	return 'Hello)';
+}
+
+const helloText = getHello();
+
+let changeText = 'JavaScript you COOL';
+const concatNewText = `${helloText} - ${changeText}`;
+
+console.log(concatNewText);
