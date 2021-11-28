@@ -172,13 +172,7 @@ outFn();
 
 // =============================================================
 
-function getHello() {
-	return 'Hello)';
-}
-
-const helloText = getHello();
-
-let changeText = 'JavaScript you COOL';
-const concatNewText = `${helloText} - ${changeText}`;
-
-console.log(concatNewText);
+const clickHandler = function (event) {
+	console.log(`Клик ${event.pageX} " ${event.pageY}`);
+};
+$('h1').click(clickHandler);
