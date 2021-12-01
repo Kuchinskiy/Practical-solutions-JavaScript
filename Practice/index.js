@@ -172,7 +172,3 @@ outFn();
 
 // =============================================================
 
-const clickHandler = function (event) {
-	console.log(`Клик ${event.pageX} " ${event.pageY}`);
-};
-$('h1').click(clickHandler);
