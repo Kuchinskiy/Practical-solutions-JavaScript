@@ -10,7 +10,18 @@ const Account = function (login, email) {
 	this.login = login;
 	this.email = email;
 
-	this.getInfo = function (value) {
-		console.log();
+	this.getInfo = function () {
+		return `Login: ${this.login}, Email: ${this.email}`;
 	};
 };
+
+// console.log(Account.prototype.getInfo); // function
+
+const mango = new Account({
+	login: 'Mangozedog',
+	email: 'mango@dog.woof',
+});
+
+console.log(mango);
+
+mango.getInfo(); // Login: Mangozedog, Email: mango@dog.woof
