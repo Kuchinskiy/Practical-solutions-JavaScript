@@ -6,16 +6,14 @@
 значения полей login и email объекта который его вызвал.
 */
 
-const Account = function (login, email) {
-	this.login = login;
-	this.email = email;
+const Account = function (obj) {
+	this.login = obj.login;
+	this.email = obj.email;
 };
 
 // console.log(Account.prototype);
 
-Account.prototype.getInfo = function (login, email) {
-	this.login = login;
-	this.email = email;
+Account.prototype.getInfo = function () {
 	console.log(`Login: ${this.login}, Email: ${this.email}`);
 };
 
@@ -26,8 +24,8 @@ const mango = new Account({
 	email: 'mango@dog.woof',
 });
 
-mango.getInfo('Mangozedog', 'mango@dog.woof');
-console.log(mango); // Login: Mangozedog, Email: mango@dog.woof
+mango.getInfo(); // Login: Mangozedog, Email: mango@dog.woof
+
 
 
 const poly = new Account({
@@ -35,5 +33,4 @@ const poly = new Account({
 	email: 'poly@mail.com',
 });
 
-poly.getInfo('Poly', 'poly@mail.com');
-console.log(poly); // Login: Poly, Email: poly@mail.com
+poly.getInfo(); // Login: Poly, Email: poly@mail.com
