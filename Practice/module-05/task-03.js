@@ -29,6 +29,11 @@ class Storage {
 		if (inx !== -1) {
 			this.items.splice(inx, 1);
 		}
+
+		// Вариант-2 (БЕЗ использования дополнительной переменной)
+		// if (this.items.includes(item)) {
+		// 	this.items.splice(this.items.indexOf(item), 1);
+		// }
 	}
 }
 
