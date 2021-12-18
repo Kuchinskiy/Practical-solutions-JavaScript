@@ -18,8 +18,10 @@ class StringBuilder {
 	get value() {
 		return this._value;
 	}
+
+
 }
 
 const builder = new StringBuilder('.');
-builder.append('-');
+builder._value = builder.value + '^';
 console.log(builder.value); // '.^'
