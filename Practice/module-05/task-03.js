@@ -19,15 +19,15 @@ class Storage {
 		return this.items;
 	}
 
-	addItem(item) {
-		this.items.push(item);
+	addItem(elem) {
+		this.items.push(elem);
 	}
 
 	removeItem(item) {
 		// https://www.delftstack.com/ru/howto/javascript/javascript-remove-from-array-by-value/
-		const inx = this.items.indexOf(item);
-		if (inx !== -1) {
-			this.items.splice(inx, 1);
+		const idx = this.items.indexOf(item);
+		if (idx !== -1) {
+			this.items.splice(idx, 1);
 		}
 
 		// Вариант-2 (БЕЗ использования дополнительной переменной)
