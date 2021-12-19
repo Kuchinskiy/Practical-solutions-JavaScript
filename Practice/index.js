@@ -203,13 +203,14 @@ console.log('After :', employeeFirst.salary);
 
 // call() & apply()
 console.log('Before :', employeeSecond.salary);
-employeeFirst.salaryHike.call(employeeSecond, 800);
-// employeeFirst.salaryHike.apply(employeeSecond, [900]);
-console.log('After :', employeeSecond.salary)
+// employeeFirst.salaryHike.call(employeeSecond, 800);
+employeeFirst.salaryHike.apply(employeeSecond, [900]);
+console.log('After :', employeeSecond.salary);
 
 // bind()
 console.log('Before :', employeeSecond.salary);
 // передаем ссылку на функцию в другом объекте с привязаным контекстом obj и аргументами
 const hikeEmployeeFull = employeeFirst.salaryHike.bind(employeeSecond, 1200);
 hikeEmployeeFull();
-console.log('After :', employeeSecond.salary)
+console.log('After :', employeeSecond.salary);
+
