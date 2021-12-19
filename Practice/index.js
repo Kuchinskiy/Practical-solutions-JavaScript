@@ -172,3 +172,35 @@ outFn();
 
 // =============================================================
 
+// methods : call, apply, bind in Object
+
+const employeeFirst = {
+	name: 'Mika',
+	salary: 200,
+
+	// static value - 500(hard code)
+	// salaryHike() {
+	// 	this.salary += 500;
+	// }
+
+	// dynamic value (change)
+	salaryHike(hike) {
+		this.salary += hike;
+	}
+}
+
+
+const employeeSecond = {
+	name: 'Nika',
+	salary: 300,
+
+}
+
+console.log('Before :', employeeFirst.salary);
+employeeFirst.salaryHike(700);
+console.log('After :', employeeFirst.salary);
+
+
+console.log('Before :', employeeSecond.salary);
+employeeFirst.salaryHike.call(employeeSecond, 800);
+console.log('After :', employeeSecond.salary)
