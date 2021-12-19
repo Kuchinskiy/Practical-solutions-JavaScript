@@ -173,6 +173,7 @@ outFn();
 // =============================================================
 
 // methods : call, apply, bind in Object
+// https://javascript.plainenglish.io/understanding-call-bind-apply-methods-in-javascript-in-simplest-way-7f466353736c
 
 const employeeFirst = {
 	name: 'Mika',
@@ -200,7 +201,15 @@ console.log('Before :', employeeFirst.salary);
 employeeFirst.salaryHike(700);
 console.log('After :', employeeFirst.salary);
 
-
+// call() & apply()
 console.log('Before :', employeeSecond.salary);
 employeeFirst.salaryHike.call(employeeSecond, 800);
+// employeeFirst.salaryHike.apply(employeeSecond, [900]);
+console.log('After :', employeeSecond.salary)
+
+// bind()
+console.log('Before :', employeeSecond.salary);
+// передаем ссылку на функцию в другом объекте с привязаным контекстом obj и аргументами
+const hikeEmployeeFull = employeeFirst.salaryHike.bind(employeeSecond, 1200);
+hikeEmployeeFull();
 console.log('After :', employeeSecond.salary)
