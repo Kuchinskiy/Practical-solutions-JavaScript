@@ -24,4 +24,20 @@ class StringBuilder {
 const builder = new StringBuilder('.');
 // builder.append('^');
 builder._value = builder.value + '^';
-console.log(builder.value); // '.^'
+// console.log(builder.value); // '.^'
+
+
+const employee = {
+	name: 'Mika',
+	salary: 200,
+
+	salaryHike() {
+		this.salary += 500;
+	}
+}
+
+console.log('Before :', employee.salary);
+
+employee.salaryHike();
+
+console.log('After :', employee.salary);
