@@ -168,7 +168,7 @@ const outFn = () => {
 	// a: 777, fnA: f
 };
 
-outFn();
+// outFn();
 
 // =============================================================
 
@@ -197,20 +197,62 @@ const employeeSecond = {
 
 }
 
-console.log('Before :', employeeFirst.salary);
+// console.log('Before :', employeeFirst.salary);
 employeeFirst.salaryHike(700);
-console.log('After :', employeeFirst.salary);
+// console.log('After :', employeeFirst.salary);
 
 // call() & apply()
-console.log('Before :', employeeSecond.salary);
+// console.log('Before :', employeeSecond.salary);
 // employeeFirst.salaryHike.call(employeeSecond, 800);
 employeeFirst.salaryHike.apply(employeeSecond, [900]);
-console.log('After :', employeeSecond.salary);
+// console.log('After :', employeeSecond.salary);
 
 // bind()
-console.log('Before :', employeeSecond.salary);
+// console.log('Before :', employeeSecond.salary);
 // передаем ссылку на функцию в другом объекте с привязаным контекстом obj и аргументами
 const hikeEmployeeFull = employeeFirst.salaryHike.bind(employeeSecond, 1200);
 hikeEmployeeFull();
-console.log('After :', employeeSecond.salary);
+// console.log('After :', employeeSecond.salary);
 
+// =============================================================
+
+/*
+Возьмем 2 строки s1 и s2, содержащие только буквы от a до z. 
+Вернуть новую отсортированную строку, как можно более длинную, 
+содержащую отдельные буквы - каждая взятая только один раз - исходящая из s1 или s2.
+*/
+
+// const a = "xyaabbbccccdefwwz";
+// const b = "xxxxyyyyabklmopq";
+
+// function longest(s1, s2) {
+// 	let result = '';
+// 	const str = s1.length > s2.length ? s1 : s2;
+
+// 	for (let i = 0; i < str.length; i += 1) {
+// 		if (result.indexOf(str[i]) < 0) {
+// 			result += str[i];
+// 		}
+// 	}
+// 	return result.split('').sort().join('');
+// }
+
+// console.log(longest(a, b));
+
+
+
+function longest(s1, s2) {
+	let result = '';
+	const str = s1.length > s2.length ? s1 : s2;
+
+	for (let i = 0; i < str.length; i += 1) {
+		if (result.indexOf(str[i]) < 0) {
+			result += str[i];
+		}
+	}
+	return result.split('').sort().join('');
+}
+
+console.log(longest("aretheyhere", "yestheyarehere")); // "aehrsty"
+console.log(longest("loopingisfunbutdangerous", "lessdangerousthancoding")); // "abcdefghilnoprstu"
+console.log(longest("inmanylanguages", "theresapairoffunctions")); // acefghilmnoprstuy
