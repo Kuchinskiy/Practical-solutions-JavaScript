@@ -244,15 +244,23 @@ hikeEmployeeFull();
 function longest(s1, s2) {
 	let result = '';
 	const str = s1.length > s2.length ? s1 : s2;
+	// console.log(str);
 
 	for (let i = 0; i < str.length; i += 1) {
-		if (result.indexOf(str[i]) < 0) {
+		if (!result.includes(str[i])) {
 			result += str[i];
 		}
 	}
 	return result.split('').sort().join('');
 }
 
+// function longest(s1, s2) {
+// 	return Array.from(new Set((s1 + s2).split(''))).sort().join('');
+// }
+
+// const result = longest("loopingisfunbutdangerous", "lessdangerousthancoding");
+// console.log(result.length, result);
+
 console.log(longest("aretheyhere", "yestheyarehere")); // "aehrsty"
-console.log(longest("loopingisfunbutdangerous", "lessdangerousthancoding")); // "abcdefghilnoprstu"
-console.log(longest("inmanylanguages", "theresapairoffunctions")); // acefghilmnoprstuy
+console.log(longest("loopingisfunbutdangerous", "lessdangerousthancoding")); // "abcdefghilnoprstu" (c, h)
+console.log(longest("inmanylanguages", "theresapairoffunctions")); // acefghilmnoprstuy (g, l, m, y)

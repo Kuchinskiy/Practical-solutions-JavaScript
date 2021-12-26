@@ -19,10 +19,20 @@ class StringBuilder {
 		return this._value;
 	}
 
+	append(str) {
+		this._value = this._value + str;
+	}
+
+	prepend(str) {
+		this._value = str + this._value;
+	}
+
 }
 
 const builder = new StringBuilder('.');
-// builder.append('^');
-builder._value = builder.value + '^';
-// console.log(builder.value); // '.^'
+builder.append('^');
+console.log(builder.value); // '.^'
+
+builder.prepend('^');
+console.log(builder.value); // '^.^'
 
