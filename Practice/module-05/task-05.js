@@ -29,6 +29,11 @@
 6. Добавялет к свойству speed полученное значение,
 при условии что результирующая скорость не больше чем значение свойства maxSpeed.
 
+7. Отнимает от свойства speed полученное значение,
+при условии что результирующая скорость не меньше нуля.
+
+8. Добавляет в поле distance киллометраж (hours * speed),
+но только в том случае если машина заведена!
 */
 
 
@@ -39,12 +44,12 @@ class Car {
 		distance: ${car.distance}, price: ${car.price}`);
 	}
 // 2.
-	constructor (speed = 0, price, maxSpeed, isOn = false, distance = 0) {
-		this.speed = speed;
-		this._price = price;
-		this.maxSpeed = maxSpeed;
-		this.isOn = isOn;
-		this.distance = distance;
+	constructor (objMustangCar) {
+		this.speed = 0;
+		this._price = objMustangCar.price;
+		this.maxSpeed = objMustangCar.maxSpeed;
+		this.isOn = false;
+		this.distance = 0;
 	}
 // 3.
 	get price () {
@@ -65,31 +70,40 @@ class Car {
 	}
 // 6.
 	accelerate (addValue) {
-		if (addValue <= this.maxSpeed) {
+		if (this.speed < this.maxSpeed) {
 			this.speed += addValue;
 		}
 	}
-
+// 7.
 	decelerate (removeValue) {
 		if (this.speed > 0) {
 			this.speed -= removeValue;
 		}
 	}
-
+// 8.
+	drive (hours) {
+		if (this.isOn) {
+			this.distance += hours * this.speed;
+		}
+	}
 }
 
 const mustang = new Car({ maxSpeed: 200, price: 2000 });
 // console.log(mustang);
 mustang.turnOn();
 mustang.accelerate(50);
+mustang.drive(2);
+
+Car.getSpecs(mustang);
+// maxSpeed: 200, speed: 50, isOn: true, distance: 100, price: 2000
+
+mustang.decelerate(20);
+mustang.drive(1);
+mustang.turnOff();
 
 Car.getSpecs(mustang);
 // maxSpeed: 200, speed: 0, isOn: false, distance: 130, price: 2000
 
-mustang.turnOff();
-mustang.decelerate(20);
-
-mustang.price = 2000;
 console.log(mustang.price); // 2000
 mustang.price = 4000;
 console.log(mustang.price); // 4000
