@@ -240,11 +240,10 @@ hikeEmployeeFull();
 // console.log(longest(a, b));
 
 
-
+// Вариант - 1 (императивный)
 function longest(s1, s2) {
 	let result = '';
-	const str = s1.length > s2.length ? s1 : s2;
-	// console.log(str);
+	const str = Array.from(`${s1}${s2}`);
 
 	for (let i = 0; i < str.length; i += 1) {
 		if (!result.includes(str[i])) {
@@ -254,6 +253,8 @@ function longest(s1, s2) {
 	return result.split('').sort().join('');
 }
 
+
+// Вариант - 2 (декларативный)
 // function longest(s1, s2) {
 // 	return Array.from(new Set((s1 + s2).split(''))).sort().join('');
 // }
