@@ -222,36 +222,37 @@ hikeEmployeeFull();
 содержащую отдельные буквы - каждая взятая только один раз - исходящая из s1 или s2.
 */
 
-// const a = "xyaabbbccccdefwwz";
-// const b = "xxxxyyyyabklmopq";
+const a = "xyaabbbccccdefwwz";
+const b = "xxxxyyyyabklmopqgh";
 
-// function longest(s1, s2) {
-// 	let result = '';
-// 	const str = s1.length > s2.length ? s1 : s2;
-
-// 	for (let i = 0; i < str.length; i += 1) {
-// 		if (result.indexOf(str[i]) < 0) {
-// 			result += str[i];
-// 		}
-// 	}
-// 	return result.split('').sort().join('');
-// }
-
-// console.log(longest(a, b));
-
-
-// Вариант - 1 (императивный)
 function longest(s1, s2) {
 	let result = '';
-	const str = Array.from(`${s1}${s2}`);
+	const str = s1.length > s2.length ? s1 : s2;
 
 	for (let i = 0; i < str.length; i += 1) {
-		if (!result.includes(str[i])) {
+		if (result.indexOf(str[i]) < 0) {
 			result += str[i];
 		}
 	}
 	return result.split('').sort().join('');
 }
+
+const total = longest(a, b);
+console.log(total.length, total);
+
+
+// Вариант - 1 (императивный)
+// function longest(s1, s2) {
+// 	let result = '';
+// 	const str = Array.from(`${s1}${s2}`);
+
+// 	for (let i = 0; i < str.length; i += 1) {
+// 		if (!result.includes(str[i])) {
+// 			result += str[i];
+// 		}
+// 	}
+// 	return result.split('').sort().join('');
+// }
 
 
 // Вариант - 2 (декларативный)
@@ -262,6 +263,6 @@ function longest(s1, s2) {
 // const result = longest("loopingisfunbutdangerous", "lessdangerousthancoding");
 // console.log(result.length, result);
 
-console.log(longest("aretheyhere", "yestheyarehere")); // "aehrsty"
-console.log(longest("loopingisfunbutdangerous", "lessdangerousthancoding")); // "abcdefghilnoprstu" (c, h)
-console.log(longest("inmanylanguages", "theresapairoffunctions")); // acefghilmnoprstuy (g, l, m, y)
+// console.log(longest("aretheyhere", "yestheyarehere")); // "aehrsty"
+// console.log(longest("loopingisfunbutdangerous", "lessdangerousthancoding")); // "abcdefghilnoprstu" (c, h)
+// console.log(longest("inmanylanguages", "theresapairoffunctions")); // acefghilmnoprstuy (g, l, m, y)
