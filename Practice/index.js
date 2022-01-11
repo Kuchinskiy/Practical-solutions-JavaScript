@@ -222,6 +222,7 @@ hikeEmployeeFull();
 содержащую отдельные буквы - каждая взятая только один раз - исходящая из s1 или s2.
 */
 
+// Императивный код
 const a = "xyaabbbccccdefwwz";
 const b = "xxxxyyyyabklmopqgh";
 
@@ -280,10 +281,11 @@ const tweets = [
 	{ id: '004', likes: 0, tags: ['js', 'nodejs', 'react'] },
 ];
 
+// Декларативный код
 const tags = Array.from(new Set(tweets.reduce((acc, tweet) => {
 	acc.push(...tweet.tags);
 	return acc;
 }, [])));
 
-console.log(tags); // ['js', 'nodejs', 'html', 'css', 'react']
+console.table(tags); // ['js', 'nodejs', 'html', 'css', 'react']
 console.log(tweets); // [{…}, {…}, {…}, {…}, {…}]
