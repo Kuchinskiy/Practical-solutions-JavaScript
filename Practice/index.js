@@ -266,3 +266,23 @@ console.log(total.length, total);
 // console.log(longest("aretheyhere", "yestheyarehere")); // "aehrsty"
 // console.log(longest("loopingisfunbutdangerous", "lessdangerousthancoding")); // "abcdefghilnoprstu" (c, h)
 // console.log(longest("inmanylanguages", "theresapairoffunctions")); // acefghilmnoprstuy (g, l, m, y)
+
+// =============================================================
+
+// Собрать все теги встречающиеся в постах в один массив.
+// Убрать все повторяющиеся, если таковы имеються и добавить только по одному каждого тега.
+
+const tweets = [
+	{ id: '000', likes: 5, tags: ['js', 'nodejs'] },
+	{ id: '001', likes: 2, tags: ['html', 'css'] },
+	{ id: '002', likes: 17, tags: ['html', 'js', 'nodejs'] },
+	{ id: '003', likes: 8, tags: ['css', 'react'] },
+	{ id: '004', likes: 0, tags: ['js', 'nodejs', 'react'] },
+];
+
+const tags = Array.from(new Set(tweets.reduce((acc, tweet) => {
+	acc.push(...tweet.tags);
+	return acc;
+}, [])));
+
+console.log(tags);
