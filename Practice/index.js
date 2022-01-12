@@ -289,3 +289,4 @@ const tags = Array.from(new Set(tweets.reduce((acc, tweet) => {
 
 console.table(tags); // ['js', 'nodejs', 'html', 'css', 'react']
 console.log(tweets); // [{…}, {…}, {…}, {…}, {…}]
+
