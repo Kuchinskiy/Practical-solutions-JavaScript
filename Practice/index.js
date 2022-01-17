@@ -321,4 +321,5 @@ console.log([1001, 991, 992, 993, 994, 995, 996].sort((a, b) => a < b ? console.
 console.log([-11, -5, 0, -2, 4].sort((a, b) => a < b ? console.log(b) : undefined)); // 0
 console.log([5, 7, 6, 8, 9, 10].sort((a, b) => a < b ? console.log(b) : undefined)); // 7
 console.log([1, 2, 3, 4, 17, 5, 6, 7, 8].sort((a, b) => a < b ? console.log(b) : undefined)); // 17
+console.log([0, -10].sort((a, b) => a < b ? console.log(b) : undefined)); // 0
 // console.log([1, 2, 3, 4, -1].sort((a, b) => a < b ? console.log(b) : undefined));
