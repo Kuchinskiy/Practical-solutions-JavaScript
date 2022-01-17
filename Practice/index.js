@@ -287,6 +287,38 @@ const tags = Array.from(new Set(tweets.reduce((acc, tweet) => {
 	return acc;
 }, [])));
 
-console.table(tags); // ['js', 'nodejs', 'html', 'css', 'react']
-console.log(tweets); // [{…}, {…}, {…}, {…}, {…}]
+// console.table(tags); // ['js', 'nodejs', 'html', 'css', 'react']
+// console.log(tweets); // [{…}, {…}, {…}, {…}, {…}]
 
+// =============================================================
+
+const input = [
+	[[2, 1], 2],
+	[[0, -10], 0],
+	[[15, 0], 15],
+	[[1, 3, 2], 3],
+	[[1, 0, 2], 1],
+	[[1, 2, 0, 3, 4], 0],
+	[[1, 2, 3, 4, -1], -1],
+	[[-11, 5, 0, 3, 4], 5],
+	[[-11, -5, 0, -2, 4], 0],
+	[[5, 7, 6, 8, 9, 10], 7],
+	[[1, 2, 3, 4, 17, 5, 6, 7, 8], 17],
+	[[19, 27, 33, 34, 112, 578, 116, 170, 800], 578],
+	[[105, 110, 111, 112, 114, 113, 115], 114],
+	[[1001, 991, 992, 993, 994, 995, 996], 1001]];
+
+	function orderBreaker (input) {
+		input.sort((a, b) => a - b);
+
+		
+	}
+
+	// console.log(orderBreaker(input));
+
+console.log([19, 27, 33, 34, 112, 578, 116, 170, 800].sort((a, b) => a < b ? console.log(b) : undefined)); // 578
+console.log([1001, 991, 992, 993, 994, 995, 996].sort((a, b) => a < b ? console.log(b) : undefined)); // 1001
+console.log([-11, -5, 0, -2, 4].sort((a, b) => a < b ? console.log(b) : undefined)); // 0
+console.log([5, 7, 6, 8, 9, 10].sort((a, b) => a < b ? console.log(b) : undefined)); // 7
+console.log([1, 2, 3, 4, 17, 5, 6, 7, 8].sort((a, b) => a < b ? console.log(b) : undefined)); // 17
+// console.log([1, 2, 3, 4, -1].sort((a, b) => a < b ? console.log(b) : undefined));
