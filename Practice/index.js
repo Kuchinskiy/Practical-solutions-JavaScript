@@ -36,10 +36,10 @@ const evenNumbers = function (arr) {
 const arrNumbers = [5, -4, 7, -89, 0, 39, 8, 1, 2];
 
 let bigNumber = arrNumbers.reduce((acc, item) => {
-   if (item > acc) {
-	acc = item;
-   }
-   return acc;
+	if (item > acc) {
+		acc = item;
+	}
+	return acc;
 });
 
 // console.log(bigNumber);
@@ -47,14 +47,14 @@ let bigNumber = arrNumbers.reduce((acc, item) => {
 // Вывести все "id" без остальной информации хранящейся в массиве объектов:
 
 const arrObj = [
-   { id: 678876, city: 'Bonn', country: 'Germany' },
-   { id: 234432, city: 'Bern', country: 'Switzerland' },
-   { id: 987654, city: 'Las Vegas', country: 'USA' },
+	{ id: 678876, city: 'Bonn', country: 'Germany' },
+	{ id: 234432, city: 'Bern', country: 'Switzerland' },
+	{ id: 987654, city: 'Las Vegas', country: 'USA' },
 ];
 
 let idArr = arrObj.reduce((acc, item) => {
-   acc.push(item.id);
-   return acc;
+	acc.push(item.id);
+	return acc;
 }, []);
 
 // console.log(idArr); // [678876, 234432, 987654]
@@ -63,7 +63,7 @@ let idArr = arrObj.reduce((acc, item) => {
 // =============================================================
 
 // Проверка на наличие свойств в объекте (пар ключ:значение)
-// Напишите функцию isEmpty(object), которая возвращает true, 
+// Напишите функцию isEmpty(object), которая возвращает true,
 // если у объекта нет свойств, иначе false.
 let obj = {};
 
@@ -90,7 +90,7 @@ obj['7:20'] = 'get up';
 const add = function (...args) {
 	console.log(args); // массив всех аргументов
 
-// Преобразовать псевдомассив в обычный массив возможно:
+	// Преобразовать псевдомассив в обычный массив возможно:
 	// const args = Array.from(arguments); // при этом функция должна быть анонимна(без подписи)
 
 	let total = 0;
@@ -118,11 +118,10 @@ let firstname = 'John';
 let lastname = 'Doe';
 // console.log(firstname, lastname, country);
 
-
 const student = {
 	firstname: 'Glad',
 	lastname: 'Chinda',
-	country: 'Nigeria'
+	country: 'Nigeria',
 };
 
 // Переназначаем значения firstname(имя) и lastname(фамилия) с помощью - деструктуризации
@@ -155,7 +154,7 @@ if (!landscape) {
 // [[Scope]]
 // [Environment]: Global
 // Parent: Global
-const fnA = (a) => console.log(a);
+const fnA = a => console.log(a);
 
 // [Environment]: Global
 // Parent: Global
@@ -187,15 +186,13 @@ const employeeFirst = {
 	// dynamic value (change)
 	salaryHike(hike) {
 		this.salary += hike;
-	}
-}
-
+	},
+};
 
 const employeeSecond = {
 	name: 'Nika',
 	salary: 300,
-
-}
+};
 
 // console.log('Before :', employeeFirst.salary);
 employeeFirst.salaryHike(700);
@@ -223,8 +220,8 @@ hikeEmployeeFull();
 */
 
 // Императивный код
-const a = "xyaabbbccccdefwwz";
-const b = "xxxxyyyyabklmopqgh";
+const a = 'xyaabbbccccdefwwz';
+const b = 'xxxxyyyyabklmopqgh';
 
 function longest(s1, s2) {
 	let result = '';
@@ -241,7 +238,6 @@ function longest(s1, s2) {
 const total = longest(a, b);
 console.log(total.length, total);
 
-
 // Вариант - 1 (императивный)
 // function longest(s1, s2) {
 // 	let result = '';
@@ -254,7 +250,6 @@ console.log(total.length, total);
 // 	}
 // 	return result.split('').sort().join('');
 // }
-
 
 // Вариант - 2 (декларативный)
 // function longest(s1, s2) {
@@ -282,44 +277,13 @@ const tweets = [
 ];
 
 // Декларативный код
-const tags = Array.from(new Set(tweets.reduce((acc, tweet) => {
-	acc.push(...tweet.tags);
-	return acc;
-}, [])));
+// const tags = Array.from(new Set(tweets.reduce((acc, tweet) => {
+// 	acc.push(...tweet.tags);
+// 	return acc;
+// }, [])));
 
 // console.table(tags); // ['js', 'nodejs', 'html', 'css', 'react']
 // console.log(tweets); // [{…}, {…}, {…}, {…}, {…}]
 
 // =============================================================
 
-const input = [
-	[[2, 1], 2],
-	[[0, -10], 0],
-	[[15, 0], 15],
-	[[1, 3, 2], 3],
-	[[1, 0, 2], 1],
-	[[1, 2, 0, 3, 4], 0],
-	[[1, 2, 3, 4, -1], -1],
-	[[-11, 5, 0, 3, 4], 5],
-	[[-11, -5, 0, -2, 4], 0],
-	[[5, 7, 6, 8, 9, 10], 7],
-	[[1, 2, 3, 4, 17, 5, 6, 7, 8], 17],
-	[[19, 27, 33, 34, 112, 578, 116, 170, 800], 578],
-	[[105, 110, 111, 112, 114, 113, 115], 114],
-	[[1001, 991, 992, 993, 994, 995, 996], 1001]];
-
-	function orderBreaker (input) {
-		input.sort((a, b) => a - b);
-
-		
-	}
-
-	// console.log(orderBreaker(input));
-
-console.log([19, 27, 33, 34, 112, 578, 116, 170, 800].sort((a, b) => a < b ? console.log(b) : undefined)); // 578
-console.log([1001, 991, 992, 993, 994, 995, 996].sort((a, b) => a < b ? console.log(b) : undefined)); // 1001
-console.log([-11, -5, 0, -2, 4].sort((a, b) => a < b ? console.log(b) : undefined)); // 0
-console.log([5, 7, 6, 8, 9, 10].sort((a, b) => a < b ? console.log(b) : undefined)); // 7
-console.log([1, 2, 3, 4, 17, 5, 6, 7, 8].sort((a, b) => a < b ? console.log(b) : undefined)); // 17
-console.log([0, -10].sort((a, b) => a < b ? console.log(b) : undefined)); // 0
-// console.log([1, 2, 3, 4, -1].sort((a, b) => a < b ? console.log(b) : undefined));
