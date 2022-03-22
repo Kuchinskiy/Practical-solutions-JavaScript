@@ -17,5 +17,22 @@ const findLongestWord = function (string) {
 	return longestWord;
 };
 
-console.log(findLongestWord('Google do a roll')); // 'Google'
-console.log(findLongestWord('May the force be with you')); // 'force'
+// console.log(findLongestWord('Google do a roll')); // 'Google'
+// console.log(findLongestWord('May the force be with you')); // 'force'
+
+
+// Option - 2
+const longestWord= (str) => {
+	const words = str.split(' ');
+	let findLongestWord = ' ';
+
+	words.forEach(wordElem => {
+		if (wordElem.length > findLongestWord.length) {
+			findLongestWord = wordElem;
+		}
+	});
+	return findLongestWord;
+};
+
+console.log(longestWord('Google do a roll')); // 'Google'
+console.log(longestWord('May the force be with you')); // 'force'
