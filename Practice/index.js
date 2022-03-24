@@ -287,3 +287,13 @@ const tweets = [
 
 // =============================================================
 
+// Напишите функцию которая возвращает последнее число месяца.
+// Иногда это 30,31 или даже февральские 28/29
+
+function getLastDayOfMonth(year, month) {
+	const date = new Date(year, month + 1, 0);
+	return date.getDate();
+}
+
+console.log(getLastDayOfMonth(2021, 0));
+console.log(getLastDayOfMonth(2022, 1));
