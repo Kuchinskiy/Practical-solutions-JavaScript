@@ -236,7 +236,7 @@ function longest(s1, s2) {
 }
 
 const total = longest(a, b);
-console.log(total.length, total);
+// console.log(total.length, total);
 
 // Вариант - 1 (императивный)
 // function longest(s1, s2) {
@@ -295,5 +295,23 @@ function getLastDayOfMonth(year, month) {
 	return date.getDate();
 }
 
-console.log(getLastDayOfMonth(2021, 0));
-console.log(getLastDayOfMonth(2022, 1));
+// console.log(getLastDayOfMonth(2021, 0));
+// console.log(getLastDayOfMonth(2022, 1));
+
+// =============================================================
+
+// Создайте функцию, принимающую на вход строку, и возвращающую 
+// количество букв(элементов) в ней.
+
+const countElements = str => {
+	let count = 0;
+
+	for (let item of str) {
+		if (str.includes(item)) {
+			count += 1;
+		}
+	}
+	return count;
+};
+
+console.log('Count:' ,countElements('ABCDFG-HMNQY'));
