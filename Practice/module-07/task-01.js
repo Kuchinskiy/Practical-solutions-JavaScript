@@ -14,3 +14,5 @@
 *-- Количество элементов: 4
 */
 
+const categories = document.querySelector('#categories');
+console.log(categories);
