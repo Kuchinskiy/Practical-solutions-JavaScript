@@ -1,4 +1,5 @@
 'use strict';
+// console.log('test');
 
 /* 
 *В HTML есть список категорий ul#categories.
@@ -15,4 +16,4 @@
 */
 
 const categories = document.querySelector('#categories');
-console.log(categories);
+// console.log(categories);
