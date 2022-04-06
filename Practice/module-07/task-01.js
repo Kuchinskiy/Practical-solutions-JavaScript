@@ -15,5 +15,7 @@
 *-- Количество элементов: 4
 */
 
-const categories = document.querySelector('#categories');
-// console.log(categories);
+const categoriesMenuItems = document.querySelectorAll('.item');
+console.log(categoriesMenuItems);
+
+categoriesMenuItems.forEach(item => console.log(`В списке ${item} категории`));
