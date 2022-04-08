@@ -19,7 +19,12 @@ const categoriesMenuItems = document.querySelector('#categories');
 console.log(categoriesMenuItems);
 // console.log(`В списке ${categoriesMenuItems.children.length} категории`);
 
-[...categoriesMenuItems.children].map(item => {
+// [...categoriesMenuItems.children].map(item => {
+// 	console.log(`Категория: ${item.children[0].textContent}`);
+// 	console.log(`Количество элементов: ${item.children[1].children.length}`);
+// });
+
+[...categoriesMenuItems.children].forEach(item => {
 	console.log(`Категория: ${item.children[0].textContent}`);
 	console.log(`Количество элементов: ${item.children[1].children.length}`);
 });
