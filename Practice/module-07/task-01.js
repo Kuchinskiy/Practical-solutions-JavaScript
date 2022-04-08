@@ -16,15 +16,26 @@
 */
 
 const categoriesMenuItems = document.querySelector('#categories');
-console.log(categoriesMenuItems);
-// console.log(`В списке ${categoriesMenuItems.children.length} категории`);
+// console.log(categoriesMenuItems);
+console.log(`В списке ${categoriesMenuItems.children.length} категории`);
 
+//* method map()
 // [...categoriesMenuItems.children].map(item => {
 // 	console.log(`Категория: ${item.children[0].textContent}`);
 // 	console.log(`Количество элементов: ${item.children[1].children.length}`);
 // });
+//* method forEach()
+// [...categoriesMenuItems.children].forEach(item => {
+// 	console.log(`Категория: ${item.children[0].textContent}`);
+// 	console.log(`Количество элементов: ${item.children[1].children.length}`);
+// });
 
-[...categoriesMenuItems.children].forEach(item => {
+
+const categories = Array.from(document.querySelectorAll('.item')); // Array.prototype.from
+// const categories = [...document.querySelectorAll('.item')]; // rest
+console.log(categories); // преообразовываем объект-псевдомассив в обычный массив(коллекцию) с его методами
+
+[...categories].forEach(item => {
 	console.log(`Категория: ${item.children[0].textContent}`);
 	console.log(`Количество элементов: ${item.children[1].children.length}`);
 });
