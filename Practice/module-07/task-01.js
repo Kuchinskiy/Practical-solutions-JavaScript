@@ -31,14 +31,14 @@ const categoriesMenuItems = document.querySelector('#categories');
 // });
 
 
-const categories = document.querySelectorAll('.item');
+const categories = document.querySelectorAll('.item'); // ES6 [...categories].method(forEach() or map())
 
 //!? Преообразовываем объект-псевдомассив в обычный массив(коллекцию) с его методами двумя способами:
 // const categories = Array.from(document.querySelectorAll('.item')); // Array.from()
 // const categories = [...document.querySelectorAll('.item')]; // ...spred
-console.log(categories); 
+// console.log(categories); 
 
-[...categories].forEach(item => { // ....spred
+[...categories].forEach(item => { // [...spred].method array
 	console.log(`Категория: ${item.children[0].textContent}`);
 	console.log(`Количество элементов: ${item.children[1].children.length}`);
 });
