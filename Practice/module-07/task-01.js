@@ -17,7 +17,7 @@
 
 const categoriesMenuItems = document.querySelector('#categories');
 // console.log(categoriesMenuItems);
-console.log(`В списке ${categoriesMenuItems.children.length} категории`);
+// console.log(`В списке ${categoriesMenuItems.children.length} категории`);
 
 //* method map()
 // [...categoriesMenuItems.children].map(item => {
@@ -31,11 +31,14 @@ console.log(`В списке ${categoriesMenuItems.children.length} катего
 // });
 
 
-const categories = Array.from(document.querySelectorAll('.item')); // Array.prototype.from
-// const categories = [...document.querySelectorAll('.item')]; // rest
-console.log(categories); // преообразовываем объект-псевдомассив в обычный массив(коллекцию) с его методами
+const categories = document.querySelectorAll('.item');
 
-[...categories].forEach(item => {
+//!? Преообразовываем объект-псевдомассив в обычный массив(коллекцию) с его методами двумя способами:
+// const categories = Array.from(document.querySelectorAll('.item')); // Array.from()
+// const categories = [...document.querySelectorAll('.item')]; // ...spred
+console.log(categories); 
+
+[...categories].forEach(item => { // ....spred
 	console.log(`Категория: ${item.children[0].textContent}`);
 	console.log(`Количество элементов: ${item.children[1].children.length}`);
 });
