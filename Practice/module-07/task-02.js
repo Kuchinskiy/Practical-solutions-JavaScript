@@ -56,7 +56,7 @@ const createElemTagsName = str => {
 const addCreateTag = arr => arr.map((item) => createElemTagsName(item));
 const list = addCreateTag(ingredients);
 const listItem = addCreateTag(teсhnology);
-// console.log(list); // (6) [li.info, li.info, li.info, li.info, li.info, li.info]
+// console.log(list); // (6) [li.info, li.info, li.info, li.info, li.info, li.info] HTMLCollection or NodeList
 
 ingredientsListItem.append(...list);
 technologyListItem.append(...listItem);
