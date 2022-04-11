@@ -33,17 +33,17 @@ const ingredients = [
 ];
 // console.log(ingredients);
 
-const elemTags = str => {
+const createElemTagsName = str => {
 	const elementList = document.createElement('li');
 	elementList.classList.add('info');
    elementList.textContent = str;
 
    return elementList;
 };
-// console.log(elemTags());
+// console.log(createElemTagsName(ingredients[1])); // создаем элемент + текст внутри тега
 
-const addCreateTag = arr => arr.map((item) => elemTags(item));
+const addCreateTag = arr => arr.map((item) => createElemTagsName(item));
 const list = addCreateTag(ingredients);
-// console.log(list);
+// console.log(list); // (6) [li.info, li.info, li.info, li.info, li.info, li.info]
 
 ingredientsListItem.append(...list);
