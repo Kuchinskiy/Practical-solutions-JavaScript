@@ -20,11 +20,8 @@ const ingredients = [
 */
 
 const ingredientsListItem = document.querySelector('#ingredients');
-const elementList = document.createElement('li');
-elementList.classList.add('info');
 console.log(ingredientsListItem);
 
-ingredientsListItem.appendChild(elementList);
 
 const ingredients = [
 	'Картошка',
@@ -36,9 +33,17 @@ const ingredients = [
 ];
 // console.log(ingredients);
 
-// function createListItemMenu () {
-//    const elementList = document.createElement('li');
-//    elementList.classList.add('info');
-// }
+const elemTags = str => {
+	const elementList = document.createElement('li');
+	elementList.classList.add('info');
+   elementList.textContent = str;
 
-// createListItemMenu();
+   return elementList;
+};
+// console.log(elemTags());
+
+const addCreateTag = arr => arr.map((item) => elemTags(item));
+const list = addCreateTag(ingredients);
+// console.log(list);
+
+ingredientsListItem.append(...list);
