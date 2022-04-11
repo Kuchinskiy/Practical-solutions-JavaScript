@@ -19,8 +19,12 @@ const ingredients = [
 Для создания DOM-узлов используй document.createElement().
 */
 
-const ingredientsItem = document.querySelector('#ingredients');
-console.log(ingredientsItem);
+const ingredientsListItem = document.querySelector('#ingredients');
+const elementList = document.createElement('li');
+elementList.classList.add('info');
+console.log(ingredientsListItem);
+
+ingredientsListItem.appendChild(elementList);
 
 const ingredients = [
 	'Картошка',
@@ -30,5 +34,11 @@ const ingredients = [
 	'Зелень',
 	'Приправы',
 ];
-console.log(ingredients);
+// console.log(ingredients);
 
+// function createListItemMenu () {
+//    const elementList = document.createElement('li');
+//    elementList.classList.add('info');
+// }
+
+// createListItemMenu();
