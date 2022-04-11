@@ -20,7 +20,9 @@ const ingredients = [
 */
 
 const ingredientsListItem = document.querySelector('#ingredients');
+const technologyListItem = document.querySelector('#technology');
 console.log(ingredientsListItem);
+console.log(technologyListItem);
 
 
 const ingredients = [
@@ -31,7 +33,16 @@ const ingredients = [
 	'Зелень',
 	'Приправы',
 ];
-// console.log(ingredients);
+
+const teсhnology = [
+	'HTML',
+	'CSS',
+	'Java Script',
+	'PHP',
+	'MySQL',
+	'Node.js',
+];
+
 
 const createElemTagsName = str => {
 	const elementList = document.createElement('li');
@@ -40,10 +51,12 @@ const createElemTagsName = str => {
 
    return elementList;
 };
-// console.log(createElemTagsName(ingredients[1])); // создаем элемент + текст внутри тега
+// console.log(createElemTagsName(ingredients[1])); // создаем элемент + текстовый контент внутри тега
 
 const addCreateTag = arr => arr.map((item) => createElemTagsName(item));
 const list = addCreateTag(ingredients);
+const listItem = addCreateTag(teсhnology);
 // console.log(list); // (6) [li.info, li.info, li.info, li.info, li.info, li.info]
 
 ingredientsListItem.append(...list);
+technologyListItem.append(...listItem);
