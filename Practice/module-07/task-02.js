@@ -24,7 +24,6 @@ const technologyListItem = document.querySelector('#technology');
 console.log(ingredientsListItem);
 console.log(technologyListItem);
 
-
 const ingredients = [
 	'Картошка',
 	'Грибы',
@@ -34,29 +33,31 @@ const ingredients = [
 	'Приправы',
 ];
 
-const teсhnology = [
-	'HTML',
-	'CSS',
-	'Java Script',
-	'PHP',
-	'MySQL',
-	'Node.js',
-];
-
+const teсhnology = ['HTML', 'CSS', 'Java Script', 'PHP', 'MySQL', 'Node.js'];
 
 const createElemTagsName = str => {
 	const elementList = document.createElement('li');
 	elementList.classList.add('info');
-   elementList.textContent = str;
+	elementList.textContent = str;
 
-   return elementList;
+	return elementList;
 };
 // console.log(createElemTagsName(ingredients[1])); // создаем элемент + текстовый контент внутри тега
 
-const addCreateTag = arr => arr.map((item) => createElemTagsName(item));
+const addCreateTag = arr => arr.map(item => createElemTagsName(item));
 const list = addCreateTag(ingredients);
 const listItem = addCreateTag(teсhnology);
 // console.log(list); // (6) [li.info, li.info, li.info, li.info, li.info, li.info] HTMLCollection or NodeList
 
 ingredientsListItem.append(...list);
 technologyListItem.append(...listItem);
+
+// Второй вариант используя method forEach() or map() + механику ...spred
+
+[...ingredients].forEach(item => {
+	const elements = document.createElement('li');
+	elements.classList.add('info');
+	elements.textContent = item;
+
+	// ingredientsListItem.append(elements);
+});
