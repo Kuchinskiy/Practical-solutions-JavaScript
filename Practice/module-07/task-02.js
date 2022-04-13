@@ -46,8 +46,12 @@ const createElemTagsName = str => {
 
 const addCreateTag = arr => arr.map(item => createElemTagsName(item));
 const list = addCreateTag(ingredients);
-const listItem = addCreateTag(teсhnology);
+// const listItem = addCreateTag(teсhnology);
 // console.log(list); // (6) [li.info, li.info, li.info, li.info, li.info, li.info] HTMLCollection or NodeList
+
+const addElemMarkup = teсhnology.map(createElemTagsName);
+technologyListItem.append(...addElemMarkup);
+
 
 // ingredientsListItem.append(...list); // используем механизм ...spred
 // technologyListItem.append(...listItem); // передавая массив элементов отдельными аргументами
@@ -65,7 +69,7 @@ const optionList = arr => {
 };
 
 const resultListItem = optionList(teсhnology);
-technologyListItem.append(...resultListItem);
+// technologyListItem.append(...resultListItem);
 
 // Как вариант используtv method forEach() чтобы перебрать массив(ingredients)
 
