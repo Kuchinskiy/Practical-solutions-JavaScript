@@ -38,7 +38,7 @@ const categories = document.querySelectorAll('.item'); // ES6 [...categories].me
 // const categories = [...document.querySelectorAll('.item')]; // ...spred
 // console.log(categories); 
 
-[...categories].forEach(item => { // [...spred].method array
+categories.forEach(item => {
 	console.log(`Категория: ${item.children[0].textContent}`);
 	console.log(`Количество элементов: ${item.children[1].children.length}`);
 });

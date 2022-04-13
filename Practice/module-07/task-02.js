@@ -52,9 +52,9 @@ const listItem = addCreateTag(teсhnology);
 ingredientsListItem.append(...list);
 technologyListItem.append(...listItem);
 
-// Второй вариант используя method forEach() or map() + механику ...spred
+// Второй вариант используя method forEach()
 
-[...ingredients].forEach(item => {
+ingredients.forEach(item => {
 	const elements = document.createElement('li');
 	elements.classList.add('info');
 	elements.textContent = item;
