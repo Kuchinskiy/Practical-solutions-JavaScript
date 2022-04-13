@@ -35,7 +35,7 @@ const ingredients = [
 
 const teсhnology = ['HTML', 'CSS', 'Java Script', 'PHP', 'MySQL', 'Node.js'];
 
-const createElemTagsName = str => {
+const createElemTagsName = str => { // получаем массив элементов [li.info]
 	const elementsList = document.createElement('li');
 	elementsList.classList.add('info');
 	elementsList.textContent = str;
@@ -49,7 +49,7 @@ const list = addCreateTag(ingredients);
 // const listItem = addCreateTag(teсhnology);
 // console.log(list); // (6) [li.info, li.info, li.info, li.info, li.info, li.info] HTMLCollection or NodeList
 
-const addElemMarkup = teсhnology.map(createElemTagsName);
+const addElemMarkup = teсhnology.map(createElemTagsName); // callback Fn on out Fn -->> createElemTagsName()
 technologyListItem.append(...addElemMarkup);
 
 
