@@ -49,7 +49,7 @@ const list = addCreateTag(ingredients);
 const listItem = addCreateTag(teсhnology);
 // console.log(list); // (6) [li.info, li.info, li.info, li.info, li.info, li.info] HTMLCollection or NodeList
 
-ingredientsListItem.append(...list);
+ingredientsListItem.append(...list); // используем механизм ...spred 
 technologyListItem.append(...listItem);
 
 // Второй вариант используя method forEach()
