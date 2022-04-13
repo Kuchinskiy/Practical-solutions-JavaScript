@@ -52,7 +52,7 @@ const listItem = addCreateTag(teсhnology);
 // ingredientsListItem.append(...list); // используем механизм ...spred
 // technologyListItem.append(...listItem); // передавая массив элементов отдельными аргументами
 
-// Еще вариант через функцию с использованием метода map() inside Fn
+// Реюзный вариант(хорошая практика) через функцию с использованием метода map() inside Fn
 
 const optionList = arr => {
 	return arr.map((str) => {
@@ -67,7 +67,7 @@ const optionList = arr => {
 const resultListItem = optionList(teсhnology);
 technologyListItem.append(...resultListItem);
 
-// Второй вариант используя method forEach()
+// Как вариант используtv method forEach() чтобы перебрать массив(ingredients)
 
 ingredients.forEach((str, idx) => {
 	const elements = document.createElement('li');
