@@ -36,11 +36,11 @@ const ingredients = [
 const teсhnology = ['HTML', 'CSS', 'Java Script', 'PHP', 'MySQL', 'Node.js'];
 
 const createElemTagsName = str => {
-	const elementList = document.createElement('li');
-	elementList.classList.add('info');
-	elementList.textContent = str;
+	const elementsList = document.createElement('li');
+	elementsList.classList.add('info');
+	elementsList.textContent = str;
 
-	return elementList;
+	return elementsList;
 };
 // console.log(createElemTagsName(ingredients[1])); // создаем элемент + текстовый контент внутри тега
 
