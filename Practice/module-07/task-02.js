@@ -50,7 +50,7 @@ const listItem = addCreateTag(teсhnology);
 // console.log(list); // (6) [li.info, li.info, li.info, li.info, li.info, li.info] HTMLCollection or NodeList
 
 ingredientsListItem.append(...list); // используем механизм ...spred 
-technologyListItem.append(...listItem);
+technologyListItem.append(...listItem); // передавая массив элементов отдельными аргументами
 
 // Второй вариант используя method forEach()
 
