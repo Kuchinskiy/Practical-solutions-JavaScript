@@ -50,7 +50,22 @@ const listItem = addCreateTag(teсhnology);
 // console.log(list); // (6) [li.info, li.info, li.info, li.info, li.info, li.info] HTMLCollection or NodeList
 
 // ingredientsListItem.append(...list); // используем механизм ...spred
-technologyListItem.append(...listItem); // передавая массив элементов отдельными аргументами
+// technologyListItem.append(...listItem); // передавая массив элементов отдельными аргументами
+
+// Еще вариант через функцию с использованием метода map() inside Fn
+
+const optionList = arr => {
+	return arr.map((str) => {
+		const el = document.createElement('li');
+		el.classList.add('option');
+		el.textContent = str;
+
+		return el;
+	});
+};
+
+const resultListItem = optionList(teсhnology);
+technologyListItem.append(...resultListItem);
 
 // Второй вариант используя method forEach()
 
