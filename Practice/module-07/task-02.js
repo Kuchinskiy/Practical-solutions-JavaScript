@@ -54,10 +54,11 @@ technologyListItem.append(...listItem); // передавая массив эл�
 
 // Второй вариант используя method forEach()
 
-ingredients.forEach(item => {
+ingredients.forEach((item, idx) => {
 	const elements = document.createElement('li');
 	elements.classList.add('info');
 	elements.textContent = item;
 
+	console.log(`${idx + 1} - ${item}`);
 	// ingredientsListItem.append(elements);
 });
