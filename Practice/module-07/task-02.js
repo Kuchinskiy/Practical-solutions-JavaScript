@@ -49,16 +49,16 @@ const list = addCreateTag(ingredients);
 const listItem = addCreateTag(teсhnology);
 // console.log(list); // (6) [li.info, li.info, li.info, li.info, li.info, li.info] HTMLCollection or NodeList
 
-ingredientsListItem.append(...list); // используем механизм ...spred 
+// ingredientsListItem.append(...list); // используем механизм ...spred
 technologyListItem.append(...listItem); // передавая массив элементов отдельными аргументами
 
 // Второй вариант используя method forEach()
 
-ingredients.forEach((item, idx) => {
+ingredients.forEach((str, idx) => {
 	const elements = document.createElement('li');
 	elements.classList.add('info');
-	elements.textContent = item;
+	elements.textContent = str;
 
-	console.log(`${idx + 1} - ${item}`);
-	// ingredientsListItem.append(elements);
+	// console.log(`${idx + 1} - ${item}`);
+	ingredientsListItem.append(elements);
 });
