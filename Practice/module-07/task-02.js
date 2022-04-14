@@ -49,8 +49,8 @@ const list = addCreateTag(ingredients);
 // const listItem = addCreateTag(teсhnology);
 // console.log(list); // (6) [li.info, li.info, li.info, li.info, li.info, li.info] HTMLCollection or NodeList
 
-const addElemMarkup = teсhnology.map(createElemTagsName); // callback Fn on out Fn -->> createElemTagsName()
-technologyListItem.append(...addElemMarkup);
+const addElements = teсhnology.map(createElemTagsName); // callback Fn on out Fn -->> createElemTagsName()
+technologyListItem.append(...addElements);
 
 
 // ingredientsListItem.append(...list); // используем механизм ...spred
