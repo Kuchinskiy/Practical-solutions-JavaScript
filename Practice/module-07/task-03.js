@@ -29,5 +29,7 @@ const images = [
 	},
 ];
 
-console.log(images);
+// console.log(images);
 
+const imgGallery = document.querySelector('#gallery');
+console.log(imgGallery);
