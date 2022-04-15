@@ -31,5 +31,18 @@ const images = [
 
 // console.log(images);
 
-const imgGallery = document.querySelector('#gallery');
-console.log(imgGallery);
+const imgGalleryContainer = document.querySelector('#gallery');
+console.log(imgGalleryContainer);
+
+const createImgElements = img => {
+	const elements = document.createElement('li');
+	elements.classList.add('list-item');
+	console.log(elements);
+
+	const imgElem = document.createElement('img');
+	imgElem.classList.add('img-item');
+	console.log(imgElem);
+
+}
+
+createImgElements();
