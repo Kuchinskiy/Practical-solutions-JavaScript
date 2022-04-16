@@ -34,15 +34,30 @@ const images = [
 const imgGalleryContainer = document.querySelector('#gallery');
 console.log(imgGalleryContainer);
 
-const createImgElements = img => {
-	const elements = document.createElement('li');
-	elements.classList.add('list-item');
-	console.log(elements);
+const createImgElemMarkup = ({url, alt}) => {
+	return `<li class="gallery-item">
+	<img src="${url}" alt="${alt}" width="200" higth="150">
+	</li>`;
+};
+const elemGalleryMarkup = images.map(createImgElemMarkup).join('');
+imgGalleryContainer.insertAdjacentHTML('afterbegin', elemGalleryMarkup);
+// console.log(elemGalleryMarkup);
 
-	const imgElem = document.createElement('img');
-	imgElem.classList.add('img-item');
-	console.log(imgElem);
 
-}
+// const elemMarkup = (img) => {
+// 	// const el = document.createElement('li');
+// 	// el.classList.add('list-item');
 
-createImgElements();
+// 	const imgEl = document.createElement('img');
+// 	imgEl.classList.add('img-item');
+// 	// imgEl.src = 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
+// 	// img.alt = alt;
+
+// 	// el.append(img);
+// 	return imgEl;
+// };
+
+// // console.log(elemMarkup(images));
+// // const gallery = images.map(elemMarkup).join('');
+// // imgGalleryContainer.append(...gallery);
+// console.log(gallery);
