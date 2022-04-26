@@ -42,22 +42,3 @@ const createImgElemMarkup = ({url, alt}) => {
 const elemGalleryMarkup = images.map(createImgElemMarkup).join('');
 imgGalleryContainer.insertAdjacentHTML('afterbegin', elemGalleryMarkup);
 // console.log(elemGalleryMarkup);
-
-
-// const elemMarkup = (img) => {
-// 	// const el = document.createElement('li');
-// 	// el.classList.add('list-item');
-
-// 	const imgEl = document.createElement('img');
-// 	imgEl.classList.add('img-item');
-// 	// imgEl.src = 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
-// 	// img.alt = alt;
-
-// 	// el.append(img);
-// 	return imgEl;
-// };
-
-// // console.log(elemMarkup(images));
-// // const gallery = images.map(elemMarkup).join('');
-// // imgGalleryContainer.append(...gallery);
-// console.log(gallery);
