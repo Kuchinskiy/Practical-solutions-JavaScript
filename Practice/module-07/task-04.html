@@ -17,25 +17,42 @@
 				line-height: 1.5;
 			}
 
+			span {
+				padding: 2px 5px;
+				font-size: 24px;
+				font-weight: 900;
+				color: #6363cf;
+			}
+
 			button {
 				width: 55px;
 				height: 45px;
 				border: none;
 				font-size: 17px;
 				font-weight: bold;
-				color: #ffffff;
 				border-radius: 50%;
-				background-color: #f3b1bc;
+				display: inline-block;
 				cursor: pointer;
+			}
+
+			.btn {
+				color: #ffffff;
+				background-color: #6363cf;
+			}
+
+			.btn:hover {
+				color: #ff0000;
+				background-color: #008CBA;
+				box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 			}
 		</style>
 
 		<p><a href="/Practice/index.html">На главную &#10003;</a></p>
 
 		<div id="counter">
-			<button type="button" data-action="decrement">-1</button>
+			<button class="btn" type="button" data-action="decrement">-1</button>
 			<span id="value">0</span>
-			<button type="button" data-action="increment">+1</button>
+			<button class="btn" type="button" data-action="increment">+1</button>
 		</div>
 
 		<script src="/Practice/module-07/task-04.js"></script>
