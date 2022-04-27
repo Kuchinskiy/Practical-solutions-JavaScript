@@ -8,3 +8,15 @@
 * -- Добавь слушатели кликов на кнопки, вызовы функций и обновление интерфейса
 */
 
+const counterIdContainer = document.querySelector('#counter');
+console.log(counterIdContainer);
+
+let counterValue = 0;
+
+function onClickIncrement() {
+	
+}
+
+function onClickDecrement() {
+	
+}
