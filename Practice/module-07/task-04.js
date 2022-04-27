@@ -10,13 +10,28 @@
 
 const counterIdContainer = document.querySelector('#counter');
 console.log(counterIdContainer);
+// const valueOnClickCounter = document.querySelector('#value');
+// const buttonNextClick = document.querySelector('button[data-action="increment"]');
+// const buttonPrevClick = document.querySelector('button[data-action="decrement"]');
+// console.log(buttonNextClick);
+// console.log(buttonPrevClick);
+// console.log(valueOnClickCounter);
+
+const refs = {
+	valueCount: document.querySelector('#value'),
+	btnNextPlus: document.querySelector('button[data-action="increment"]'),
+	btnPrevMinus: document.querySelector('button[data-action="decrement"]'),
+};
+
+refs.btnNextPlus.addEventListener('click', onClickIncrement);
+refs.btnPrevMinus.addEventListener('click', onClickDecrement);
 
 let counterValue = 0;
 
-function onClickIncrement() {
+function onClickIncrement(evt) {
 	
 }
 
-function onClickDecrement() {
+function onClickDecrement(evt) {
 	
 }
