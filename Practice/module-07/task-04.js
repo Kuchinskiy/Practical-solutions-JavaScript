@@ -8,30 +8,27 @@
 * -- Добавь слушатели кликов на кнопки, вызовы функций и обновление интерфейса
 */
 
-const counterIdContainer = document.querySelector('#counter');
-console.log(counterIdContainer);
-// const valueOnClickCounter = document.querySelector('#value');
-// const buttonNextClick = document.querySelector('button[data-action="increment"]');
-// const buttonPrevClick = document.querySelector('button[data-action="decrement"]');
-// console.log(buttonNextClick);
-// console.log(buttonPrevClick);
-// console.log(valueOnClickCounter);
-
 const refs = {
-	valueCount: document.querySelector('#value'),
+	counterValue: document.querySelector('#value'),
 	btnNextPlus: document.querySelector('button[data-action="increment"]'),
 	btnPrevMinus: document.querySelector('button[data-action="decrement"]'),
 };
 
-refs.btnNextPlus.addEventListener('click', onClickIncrement);
-refs.btnPrevMinus.addEventListener('click', onClickDecrement);
+refs.btnNextPlus.addEventListener('click', onTargetButtonClickIncrement);
+refs.btnPrevMinus.addEventListener('click', onTargetButtonClickDecrement);
 
 let counterValue = 0;
 
-function onClickIncrement(evt) {
-	
+function onTargetButtonClickIncrement() {
+	counterValue += 1;
+	refs.counterValue.textContent = counterValue;
 }
 
-function onClickDecrement(evt) {
-	
+function onTargetButtonClickDecrement() {
+	if (counterValue === 0) {
+		return;
+	}
+
+	counterValue -= 1;
+	refs.counterValue.textContent = counterValue;
 }
