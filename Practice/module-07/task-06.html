@@ -4,8 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>DOM_Module_07_Task_05</title>
-
+		<title>DOM_Module_07_Task_06</title>
 		<style>
 			body {
 				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -15,16 +14,31 @@
 				color: #424242;
 				line-height: 1.5;
 			}
+
+			#validation-input {
+				border: 3px solid #bdbdbd;
+			}
+
+			#validation-input.valid {
+				border-color: #4caf50;
+			}
+
+			#validation-input.invalid {
+				border-color: #f44336;
+			}
 		</style>
 	</head>
 
 	<body>
 		<p><a href="/Practice/index.html">На главную</a></p>
 
-		<input type="text" placeholder="Ваше имя?" id="name-input" />
-		<button class="btn">Clear</button>
-		<h1>Привет, <span id="name-output">незнакомец</span>!</h1>
+		<input
+			type="text"
+			id="validation-input"
+			data-length="6"
+			placeholder="Введи 6 символов"
+		/>
 
-		<script src="/Practice/module-07/task-05.js" type="module"></script>
+		<script src="/Practice/module-07/task-06.js" type="module"></script>
 	</body>
 </html>
