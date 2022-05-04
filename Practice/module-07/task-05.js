@@ -24,9 +24,9 @@ function onChangeInputEnter(evt) {
 }
 
 function onClickBtnCleanInput() {
-	if (refs.input.value === '') {
-		refs.output.textContent = 'незнакомец';
-	};
-
+	refs.output.textContent = refs.input.value || 'незнакомец';
+	// if (refs.input.value === '') {
+	// 	refs.output.textContent = 'незнакомец';
+	// };
 	refs.input.value = '';
 }
