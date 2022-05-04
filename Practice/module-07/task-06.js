@@ -28,4 +28,18 @@
 }
 */
 
+const refs = {
+	input: document.querySelector('#validation-input[data-length="6"]'),
+};
+// console.log(refs.input);
 
+refs.input.addEventListener('focus', handleFocusInputValid);
+refs.input.addEventListener('blur', handleFocusInputInValid);
+
+function handleFocusInputValid(evt) {
+	evt.target.style.background = 'pink';
+}
+
+function handleFocusInputInValid(evt) {
+	evt.target.style.background = '';
+}
