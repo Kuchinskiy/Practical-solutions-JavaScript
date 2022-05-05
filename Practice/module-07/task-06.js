@@ -34,12 +34,18 @@ const refs = {
 // console.log(refs.input);
 
 refs.input.addEventListener('focus', handleFocusInputValid);
-refs.input.addEventListener('blur', handleFocusInputInValid);
+refs.input.addEventListener('blur', handleFocusInputInvalid);
 
 function handleFocusInputValid(evt) {
-	evt.target.style.background = 'pink';
+	// evt.target.style.background = 'pink';
+
+	refs.input = evt.currentTarget;
+	refs.input.classList.add('.valid');
 }
 
-function handleFocusInputInValid(evt) {
-	evt.target.style.background = '';
+function handleFocusInputInvalid(evt) {
+	// evt.target.style.background = '';
+
+	refs.input = evt.currentTarget;
+	refs.input.classList.add('.invalid');
 }
