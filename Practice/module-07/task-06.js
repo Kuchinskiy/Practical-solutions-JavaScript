@@ -29,23 +29,31 @@
 */
 
 const refs = {
-	input: document.querySelector('#validation-input[data-length="6"]'),
+	input: document.querySelector('#validation-input'),
 };
 // console.log(refs.input);
 
-refs.input.addEventListener('focus', handleFocusInputValid);
-refs.input.addEventListener('blur', handleFocusInputInvalid);
+refs.input.addEventListener('blur', handleFocusInputValid);
+// refs.input.addEventListener('blur', handleFocusInputInvalid);
 
-function handleFocusInputValid(evt) {
+function handleFocusInputValid() {
 	// evt.target.style.background = 'pink';
+	const setCounter = Number(refs.input.dataset.length);
+	let setQuantity = refs.input.value.length;
 
-	refs.input = evt.currentTarget;
-	refs.input.classList.add('.valid');
+	if (setCounter === setQuantity) {
+		refs.input.classList.add('valid');
+		refs.input.classList.remove('invalid');
+	} else {
+		refs.input.classList.add('invalid');
+		refs.input.classList.remove('valid');
+	}
+
 }
 
-function handleFocusInputInvalid(evt) {
-	// evt.target.style.background = '';
+// function handleFocusInputInvalid(evt) {
+// 	evt.target.style.background = '';
 
-	refs.input = evt.currentTarget;
-	refs.input.classList.add('.invalid');
-}
+// 	refs.input = evt.currentTarget;
+// 	refs.input.classList.add('.invalid');
+// }
