@@ -39,8 +39,8 @@ refs.input.addEventListener('focus', handleInputBackground);
 function handleBlurInput(evt) {
 	evt.target.style.background = '';
 
-	const setCounterLength = Number(refs.input.dataset.length);
-	const setQuantityLength = refs.input.value.length;
+	const setQuantityLength = Number(refs.input.dataset.length);
+	const setCounterLength = refs.input.value.length;
 
 	if (setCounterLength === setQuantityLength) {
 		refs.input.classList.add('valid');
