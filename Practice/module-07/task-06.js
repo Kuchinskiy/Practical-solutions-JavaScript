@@ -31,17 +31,18 @@
 const refs = {
 	input: document.querySelector('#validation-input'),
 };
-// console.log(refs.input);
 
-refs.input.addEventListener('blur', handleFocusInputValid);
-// refs.input.addEventListener('blur', handleFocusInputInvalid);
+refs.input.addEventListener('blur', handleBlurInput);
+refs.input.addEventListener('focus', handleInputBackground);
 
-function handleFocusInputValid() {
-	// evt.target.style.background = 'pink';
-	const setCounter = Number(refs.input.dataset.length);
-	let setQuantity = refs.input.value.length;
 
-	if (setCounter === setQuantity) {
+function handleBlurInput(evt) {
+	evt.target.style.background = '';
+
+	const setCounterLength = Number(refs.input.dataset.length);
+	const setQuantityLength = refs.input.value.length;
+
+	if (setCounterLength === setQuantityLength) {
 		refs.input.classList.add('valid');
 		refs.input.classList.remove('invalid');
 	} else {
@@ -51,9 +52,6 @@ function handleFocusInputValid() {
 
 }
 
-// function handleFocusInputInvalid(evt) {
-// 	evt.target.style.background = '';
-
-// 	refs.input = evt.currentTarget;
-// 	refs.input.classList.add('.invalid');
-// }
+function handleInputBackground(evt) {
+	evt.target.style.background = 'pink';
+}
