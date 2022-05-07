@@ -43,13 +43,14 @@ function handleBlurInput(evt) {
 	const setCounterLength = refs.input.value.length;
 
 	if (setCounterLength === setQuantityLength) {
+		// refs.input.classList.toggle('valid');
 		refs.input.classList.add('valid');
 		refs.input.classList.remove('invalid');
 	} else {
+		// refs.input.classList.toggle('invalid');
 		refs.input.classList.add('invalid');
 		refs.input.classList.remove('valid');
 	}
-
 }
 
 function handleInputBackground(evt) {
