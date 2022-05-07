@@ -30,13 +30,14 @@
 
 const refs = {
 	input: document.querySelector('#validation-input'),
+	error: document.querySelector('#error'),
 };
 
-refs.input.addEventListener('blur', handleBlurInput);
+refs.input.addEventListener('blur', handleBlurInputContent);
 refs.input.addEventListener('focus', handleInputBackground);
 
 
-function handleBlurInput(evt) {
+function handleBlurInputContent(evt) {
 	evt.target.style.background = '';
 
 	const setQuantityLength = Number(refs.input.dataset.length); // установленое к-во символов(преобразов., в число)
@@ -51,8 +52,14 @@ function handleBlurInput(evt) {
 		refs.input.classList.add('invalid');
 		refs.input.classList.remove('valid');
 	}
+
+	if (refs.input.value.length > 6 || 6 > refs.input.value.length) {
+		refs.error.textContent = 'Пожалуйста, введите нужное к-во символов!!!';
+	}
 }
+
 
 function handleInputBackground(evt) {
 	evt.target.style.background = 'pink';
+	refs.error.textContent = '';
 }
