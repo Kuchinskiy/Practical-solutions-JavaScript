@@ -39,10 +39,10 @@ refs.input.addEventListener('focus', handleInputBackground);
 function handleBlurInput(evt) {
 	evt.target.style.background = '';
 
-	const setQuantityLength = Number(refs.input.dataset.length);
-	const setCounterLength = refs.input.value.length;
+	const setQuantityLength = Number(refs.input.dataset.length); // установленое к-во символов(преобразов., в число)
+	const getCountLength = refs.input.value.length; // к-во символов которое вводим в инпут
 
-	if (setCounterLength === setQuantityLength) {
+	if (getCountLength === setQuantityLength) {
 		// refs.input.classList.toggle('valid');
 		refs.input.classList.add('valid');
 		refs.input.classList.remove('invalid');
