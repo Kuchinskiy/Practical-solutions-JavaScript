@@ -31,4 +31,32 @@ const refs = {
 	boxes: document.querySelector('#boxes'),
 };
 
-console.log(refs.boxes);
+// refs.input.addEventListener('input', handleInputNumber);
+refs.render.addEventListener('click', handleBtnInputGetAmount);
+refs.destroy.addEventListener('click', handleBtnDestroyBoxes);
+
+function handleBtnInputGetAmount(evt) {
+	refs.input.dataset.value = Number(evt.currentTarget.value);
+	handleBtnCreateBoxes(amount);
+}
+
+function handleBtnCreateBoxes(amount) {
+	let arr = [];
+	let basicSize = 30;
+
+	return arr.map(() => {
+		const fragment = document.createDocumentFragment();
+		const el = document.createElement('div');
+		let size =`${basicSize} * 10`;
+		el.style.cssText = `width: ${size}px; height: ${size}px; background-color: rgba( ${random()} , ${random()} , ${random()} )`;
+		fragment.appendChild(el);
+
+		return refs.boxes.appendChild(fragment);
+	});
+}
+
+function handleBtnDestroyBoxes() {
+	refs.boxes.innerHTML = '';
+}
+
+const randomRGB = () => Math.floor(Math.random() * 256);
