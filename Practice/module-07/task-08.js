@@ -24,39 +24,48 @@
 */
 
 const refs = {
-	control: document.querySelector('#controls'),
 	input: document.querySelector('input'),
 	render: document.querySelector('button[data-action="render"]'),
 	destroy: document.querySelector('button[data-action="destroy"]'),
 	boxes: document.querySelector('#boxes'),
 };
 
-// refs.input.addEventListener('input', handleInputNumber);
-refs.render.addEventListener('click', handleBtnInputGetAmount);
+refs.input.addEventListener('input', handleBtnInputSetAmount);
+refs.render.addEventListener('click', handleBtnCreateBoxes);
 refs.destroy.addEventListener('click', handleBtnDestroyBoxes);
 
-function handleBtnInputGetAmount(evt) {
-	refs.input.dataset.value = Number(evt.currentTarget.value);
-	handleBtnCreateBoxes(amount);
+function handleBtnInputSetAmount(evt) {
+	refs.input.setAttribute('count', Number(evt.currentTarget.value));
+	// console.log(Number(evt.currentTarget.value));
 }
 
-function handleBtnCreateBoxes(amount) {
-	let arr = [];
-	let basicSize = 30;
+const randomRGB = () => {
+	let x = Math.floor(Math.random() * 256);
+	let y = Math.floor(Math.random() * 256);
+	let z = Math.floor(Math.random() * 256);
+	let bgColor = 'rgb(' + x + ',' + y + ',' + z + ')';
 
-	return arr.map(() => {
-		const fragment = document.createDocumentFragment();
-		const el = document.createElement('div');
-		let size =`${basicSize} * 10`;
-		el.style.cssText = `width: ${size}px; height: ${size}px; background-color: rgba( ${random()} , ${random()} , ${random()} )`;
-		fragment.appendChild(el);
+	return bgColor;
+};
 
-		return refs.boxes.appendChild(fragment);
-	});
+
+function handleBtnCreateBoxes() {
+	let baseBoxSize = 20;
+	const amount = Number(refs.input.getAttribute('count'));
+
+	for (let i = 0; i < amount; i += 1) {
+		baseBoxSize += 10;
+		const newBox = document.createElement('div');
+		newBox.style.background = randomRGB();
+		newBox.style.height = `${baseBoxSize}px`;
+		newBox.style.width = `${baseBoxSize}px`;
+		newBox.style.margin = '10px';
+		//  newBox.classList.add("new-box");
+		refs.boxes.append(newBox);
+	}
 }
 
 function handleBtnDestroyBoxes() {
 	refs.boxes.innerHTML = '';
+	refs.input.value = '';
 }
-
-const randomRGB = () => Math.floor(Math.random() * 256);
