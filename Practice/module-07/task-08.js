@@ -34,6 +34,9 @@ refs.input.addEventListener('input', handleBtnInputSetAmount);
 refs.render.addEventListener('click', handleBtnCreateBoxes);
 refs.destroy.addEventListener('click', handleBtnDestroyBoxes);
 
+refs.input.addEventListener('focus', onBackgroundInput);
+refs.input.addEventListener('blur', offBackgroundInput);
+
 function handleBtnInputSetAmount(evt) {
 	refs.input.setAttribute('count', Number(evt.currentTarget.value));
 	// console.log(Number(evt.currentTarget.value));
@@ -47,7 +50,6 @@ const randomRGB = () => {
 
 	return bgColor;
 };
-
 
 function handleBtnCreateBoxes() {
 	let baseBoxSize = 20;
@@ -63,6 +65,14 @@ function handleBtnCreateBoxes() {
 		//  newBox.classList.add("new-box");
 		refs.boxes.append(newBox);
 	}
+}
+
+function onBackgroundInput(evt) {
+	evt.target.style.background = 'orange';
+}
+
+function offBackgroundInput(evt) {
+	evt.target.style.background = '';
 }
 
 function handleBtnDestroyBoxes() {
