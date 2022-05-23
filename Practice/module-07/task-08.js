@@ -78,4 +78,4 @@ function offBackgroundInput(evt) {
 function handleBtnDestroyBoxes() {
 	refs.boxes.innerHTML = '';
 	refs.input.value = '';
-}
+} 
