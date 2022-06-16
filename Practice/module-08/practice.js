@@ -36,12 +36,16 @@ function setActiveLink(nextActiveLink) {
 
 // Код добавления кнопок
 const addBtn = document.querySelector('.js-add-btn');
-let labelContentElem = addNameElem[Math.floor(Math.random() * addNameElem.length)];
+// let labelContentElem = addNameElem[Math.floor(Math.random() * addNameElem.length)];
 
 
 addBtn.addEventListener('click', onAddBtnClick);
 
 function onAddBtnClick() {
+	let positionElem = Math.floor(Math.random() * addNameElem.length);
+	let labelContentElem = addNameElem.splice(positionElem, 1);
+
+
 	const item = document.createElement('li');
 	const tagLink = document.createElement('a');
 
