@@ -21,8 +21,11 @@ function handleNavClick(evt) {
 	if (target.nodeName !== 'A') {
 		return;
 	}
+	// Выбираем множество элементов из многих вешаем класс или снимаем
+	target.classList.toggle('active');
 
-	setActiveLink(target);
+	// Переданая функция для активизация класса с CSS
+	// setActiveLink(target);
 }
 
 
