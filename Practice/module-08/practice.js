@@ -10,11 +10,14 @@ nav.addEventListener('click', handleNavClick);
 
 function handleNavClick(evt) {
 	evt.preventDefault();
+	if (evt.target === evt.currentTarget) {
+		return;
+	}
 
 	const target = evt.target;
 	console.log('evt target', target); // смотрим что тут находится
 
-	// Проверяем тип узла, если не ссылка выходим из функции(для этого используем nodeName)
+	// Проверяем тип узла, если не 'ссылка' выходим из функции(для этого используем nodeName)
 	if (target.nodeName !== 'A') {
 		return;
 	}
