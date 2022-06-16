@@ -1,7 +1,7 @@
 'use strict';
 
-const addNameElem = ['PHP', 'Go', 'Phyton'];
-console.log(addNameElem);
+const addNameElem = ['PHP', 'Go', 'Phyton', 'MySQL', 'Angular'];
+
 
 // Delegation event.target
 const nav = document.querySelector('.js-nav');
@@ -50,5 +50,6 @@ function onAddBtnClick() {
 	item.appendChild(tagLink);
 
 	nav.appendChild(item);
-	labelContentElem += 1;
+	[...new Set(labelContentElem)];
+	// labelContentElem += 1;
 }
