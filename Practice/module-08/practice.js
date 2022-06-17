@@ -2,7 +2,6 @@
 
 const addNameElem = ['PHP', 'Go', 'Phyton', 'MySQL', 'Angular', 'Vue', 'C#'];
 
-
 // Delegation event.target
 const nav = document.querySelector('.js-nav');
 
@@ -60,3 +59,24 @@ function onAddBtnClick() {
 	labelContentElem += 1;
 	// [...new Set(labelContentElem)];
 }
+
+
+// =============================================================
+/*
+--Todos--
+*/
+
+const todos = {
+	items: [],
+	add(text) {
+		const todo = {
+			id: Date.now();
+			text
+		};
+
+		this.items.push(todo);
+	},
+	delete(id) {
+		this.items = this.items.filter(item => item.id !== id);
+	}
+};
