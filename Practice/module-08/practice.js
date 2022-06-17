@@ -57,6 +57,6 @@ function onAddBtnClick() {
 	item.appendChild(tagLink);
 
 	nav.appendChild(item);
-	[...new Set(labelContentElem)];
-	// labelContentElem += 1;
+	labelContentElem += 1;
+	// [...new Set(labelContentElem)];
 }
