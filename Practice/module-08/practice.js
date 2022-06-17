@@ -62,7 +62,7 @@ function onAddBtnClick() {
 /*
 --Todos--
 */
-// Ultra model
+// Ultra model DATA (главные данные)
 const todos = {
 	items: [],
 	add(text) {
