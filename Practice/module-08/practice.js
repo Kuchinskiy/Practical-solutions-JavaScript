@@ -1,4 +1,5 @@
 'use strict';
+// console.log('💩');
 
 const addNameElem = ['PHP', 'Go', 'Phyton', 'MySQL', 'Angular', 'Vue', 'C#'];
 
@@ -87,6 +88,14 @@ const refs = {
 
 refs.editor.addEventListener('submit', handleEditorSubmit);
 refs.todoList.addEventListener('click', handleTodoListClick);
+// document.querySelector('input').addEventListener(
+// 	'input',
+// 	_.debounce(() => {
+// 		console.log(
+// 			'Input event handler invocation after 300ms of inactivity past burst.',
+// 		);
+// 	}, 300),
+// );
 
 function handleEditorSubmit(evt) {
 	evt.preventDefault();
@@ -97,7 +106,7 @@ function handleEditorSubmit(evt) {
 	// console.log(inputValue); // смотрим введеное значение 'input', которое получаем)
 
 	const todo = todos.add(inputValue);
-	const todoMarkup =  buildTodoItem(todo);
+	const todoMarkup = buildTodoItem(todo);
 	appendTodoItem(refs.todoList, todoMarkup);
 	// console.log(todos.items); // смотрим что там лежит 'todos' [{...}] и он будет добовляться и обновлятся
 	// console.log(todoMarkup);
@@ -145,4 +154,3 @@ function handleTodoListClick(evt) {
 /*
 Концепция Intersection Observer
 */
-
