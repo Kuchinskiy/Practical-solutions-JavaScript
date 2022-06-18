@@ -140,3 +140,9 @@ function handleTodoListClick(evt) {
 
 	parentLi.remove(); // удаляем элемент из интерфейса
 }
+
+// =============================================================
+/*
+Концепция Intersection Observer
+*/
+
