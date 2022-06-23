@@ -147,3 +147,74 @@ body {
 	display: flex;
 	padding: 4px;
 }
+
+/* ========================================================================================== */
+
+/*
+Intersection Observer(class) --Scrollspy -- event scroll
+*/
+
+.masthead {
+	position: sticky;
+	top: 0;
+	display: flex;
+	padding-left: 16px;
+	padding-right: 16px;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #3f51b5;
+}
+
+.input {
+	font: inherit;
+	padding: 4px;
+}
+
+.page-nav {
+	display: flex;
+}
+
+.page-nav__link {
+	display: block;
+	padding: 16px;
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: background-color 200ms ease-in-out;
+}
+
+.page-nav__link--active {
+	background-color: #ff5252;
+}
+
+.container {
+	padding-left: 16px;
+	padding-right: 16px;
+
+	max-width: 1280px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.section {
+	padding: 32px 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.section h2 {
+	font-weight: 500;
+	margin-top: 0;
+}
+
+.section p {
+	line-height: 1.5;
+}
+
+img {
+	opacity: 0;
+	transition: opacity 300ms ease-in-out;
+}
+
+img.fade-in {
+	opacity: 1;
+}
