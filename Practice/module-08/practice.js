@@ -152,5 +152,28 @@ function handleTodoListClick(evt) {
 
 // =============================================================
 /*
-Концепция Intersection Observer
+Концепция Intersection Observer для события scroll
 */
+
+// Call-back function - которую передаем в новый экземпляр объекта (Fn_Constructor)
+const onEntry = entries => {
+	entries.forEach(entry => {
+		if (entry.isIntersecting) {
+			console.log(entry.target); // смотрим что тут находится на пороге вхождения в 'root'
+		}
+	});
+};
+
+// Записываем опции которые будем передавать в новый экземпляр объекта (Fn_Constructor)
+const options = {
+	treshold: 0.5
+};
+
+// Создаем (Fn_Constructor) для работы Observer(a) в ее парметры предаються два аргумента(callback & options)
+const observer = new IntersectionObserver(onEntry,  options);
+const sections = document.querySelectorAll('.section');
+
+// Указываем конкретизируя за кем следить  Observer(у) как правило он следит за кем-то одним:
+sections.forEach(section => {
+	observer.observe(section);
+});
