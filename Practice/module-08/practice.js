@@ -155,11 +155,24 @@ function handleTodoListClick(evt) {
 Концепция Intersection Observer для события scroll
 */
 
+const navigation = document.querySelector('.page-nav');
+
 // Call-back function - которую передаем в новый экземпляр объекта (Fn_Constructor)
 const onEntry = entries => {
 	entries.forEach(entry => {
 		if (entry.isIntersecting) {
-			console.log(entry.target); // смотрим что тут находится на пороге вхождения в 'root'
+			// console.log(entry.target); // смотрим что тут находится на пороге вхождения в 'root'
+			const sectionId = entry.target.getAttribute('id');
+			// console.log(sectionId);
+
+			const currentActiveLink = document.querySelector('.page-nav__link--active');
+
+			if (currentActiveLink) {
+				currentActiveLink.classList.remove('page-nav__link--active');
+			}
+
+			const nextActiveLink = navigation.querySelector(`a[href="#${sectionId}"]`);
+			nextActiveLink.classList.add('page-nav__link--active');
 		}
 	});
 };
@@ -176,4 +189,35 @@ const sections = document.querySelectorAll('.section');
 // Указываем конкретизируя за кем следить  Observer(у) как правило он следит за кем-то одним:
 sections.forEach(section => {
 	observer.observe(section);
+});
+
+// =============================================================
+/*
+Создаем Lazy-load  с помощью Intersection Observer
+*/
+
+const lazyLoad = target => {
+	const options = {};
+
+	const io = new IntersectionObserver((entries, observer) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				const img = entry.target;
+				const imageUrl = img.dataset.lazy;
+
+				img.setAttribute(imageUrl);
+
+				observer.disconnect(); // снимаем Observer
+			}
+		});
+	}, options);
+	io.observe(target);
+};
+
+// Выбираем изображения из секции за которыми будет следить Observer
+const images = document.querySelectorAll('.section img');
+
+// Указываем конкретизируя за кем следить  Observer(у)
+images.forEach(image => {
+	lazyLoad(image);
 });
