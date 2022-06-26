@@ -165,13 +165,17 @@ const onEntry = entries => {
 			const sectionId = entry.target.getAttribute('id');
 			// console.log(sectionId);
 
-			const currentActiveLink = document.querySelector('.page-nav__link--active');
+			const currentActiveLink = document.querySelector(
+				'.page-nav__link--active',
+			);
 
 			if (currentActiveLink) {
 				currentActiveLink.classList.remove('page-nav__link--active');
 			}
 
-			const nextActiveLink = navigation.querySelector(`a[href="#${sectionId}"]`);
+			const nextActiveLink = navigation.querySelector(
+				`a[href="#${sectionId}"]`,
+			);
 			nextActiveLink.classList.add('page-nav__link--active');
 		}
 	});
@@ -179,11 +183,11 @@ const onEntry = entries => {
 
 // Записываем опции которые будем передавать в новый экземпляр объекта (Fn_Constructor)
 const options = {
-	treshold: 0.5
+	treshold: 0.5,
 };
 
 // Создаем (Fn_Constructor) для работы Observer(a) в ее парметры предаються два аргумента(callback & options)
-const observer = new IntersectionObserver(onEntry,  options);
+const observer = new IntersectionObserver(onEntry, options);
 const sections = document.querySelectorAll('.section');
 
 // Указываем конкретизируя за кем следить  Observer(у) как правило он следит за кем-то одним:
@@ -199,7 +203,7 @@ sections.forEach(section => {
 const lazyLoad = target => {
 	const options = {
 		rootMargin: '50px 0px',
-		treshold: 0.7
+		treshold: 0.7,
 	};
 
 	// создаем наблюдатель
@@ -207,7 +211,7 @@ const lazyLoad = target => {
 		// для каждой записи-целевого элемента
 		entries.forEach(entry => {
 			// console.log(entry.target);
-	// если элемент является наблюдаемым
+			// если элемент является наблюдаемым
 			if (entry.isIntersecting) {
 				const img = entry.target;
 				// ссылка на оригинальное изображение хранится в атрибуте "data-lazy" получаем ее через dataset
@@ -231,3 +235,56 @@ const images = document.querySelectorAll('.section img');
 images.forEach(image => {
 	lazyLoad(image);
 });
+
+// =============================================================
+/*
+Фильтр с поиском через 'input'
+*/
+
+const tech = [
+	{ label: 'HTML' },
+	{ label: 'CSS' },
+	{ label: 'JavaScript' },
+	{ label: 'Node.js' },
+	{ label: 'React' },
+	{ label: 'Vue' },
+	{ label: 'Next.js' },
+	{ label: 'Mobx' },
+	{ label: 'Redux' },
+	{ label: 'React Router' },
+	{ label: 'GraphQl' },
+	{ label: 'PostgreSQL' },
+	{ label: 'MongoDB' },
+];
+
+/*
+* 1. Рендерим разметку элементов списка
+* 2. Слушаем изменение фильтра
+* 3. Фильтруем данные и рендерим новые элементы
+*/
+
+const refsMarkup = {
+	list: document.querySelector('.js-list'),
+	input: document.querySelector('#filter'),
+};
+
+// Слушаем изменение фильтра
+refsMarkup.input.addEventListener('input', onFilterChange);
+
+const listItemsMarkup = createListMarkup(tech);
+refsMarkup.list.innerHTML = listItemsMarkup;
+
+// Рендерим разметку элементов списка
+function createListMarkup(items) {
+	return items.map(item => `<li>${item.label}</li>`).join('');
+}
+
+// Фильтруем данные и рендерим новые элементы
+function onFilterChange(evt) {
+	const filter =evt.target.value.toLowerCase();
+
+	const filteredItems = tech.filter(items => items.label.toLowerCase().includes(filter));
+
+	const listItemsMarkup = createListMarkup(filteredItems);
+	refsMarkup.list.innerHTML = listItemsMarkup;
+}
