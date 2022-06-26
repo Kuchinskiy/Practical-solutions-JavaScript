@@ -197,7 +197,10 @@ sections.forEach(section => {
 */
 
 const lazyLoad = target => {
-	const options = {};
+	const options = {
+		rootMargin: '50px 0px',
+		treshold: 0.01
+	};
 
 	const io = new IntersectionObserver((entries, observer) => {
 		entries.forEach(entry => {
