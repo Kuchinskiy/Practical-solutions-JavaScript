@@ -269,10 +269,11 @@ const refsMarkup = {
 };
 
 // Слушаем изменение фильтра
-refsMarkup.input.addEventListener('input', onFilterChange);
+refsMarkup.input.addEventListener('input', _.debounce(onFilterChange, 500));
 
+// Рендерим весь массив
 const listItemsMarkup = createListMarkup(tech);
-refsMarkup.list.innerHTML = listItemsMarkup;
+populateList(listItemsMarkup);
 
 // Рендерим разметку элементов списка
 function createListMarkup(items) {
@@ -281,10 +282,16 @@ function createListMarkup(items) {
 
 // Фильтруем данные и рендерим новые элементы
 function onFilterChange(evt) {
+	console.log('INPUT');
+	// из интерфейса получаем фильтр, из модели tech[], отфильтровываем те объекты которые подходят
 	const filter =evt.target.value.toLowerCase();
-
 	const filteredItems = tech.filter(items => items.label.toLowerCase().includes(filter));
 
+	// создаем разметку под новый отфильтрованый массив и полностью заменили разметку 'ul'
 	const listItemsMarkup = createListMarkup(filteredItems);
-	refsMarkup.list.innerHTML = listItemsMarkup;
+	populateList(listItemsMarkup);
+}
+
+function populateList(markup) {
+	refsMarkup.list.innerHTML = markup;
 }
