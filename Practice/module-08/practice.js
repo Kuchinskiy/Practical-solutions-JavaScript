@@ -152,7 +152,7 @@ function handleTodoListClick(evt) {
 
 // =============================================================
 /*
-Концепция Intersection Observer для события scroll
+Концепция Intersection Observer для события scroll(scrollspy);
 */
 
 const navigation = document.querySelector('.page-nav');
@@ -201,17 +201,18 @@ const lazyLoad = target => {
 
 	const io = new IntersectionObserver((entries, observer) => {
 		entries.forEach(entry => {
+			// console.log(entry.target);
 			if (entry.isIntersecting) {
 				const img = entry.target;
 				const imageUrl = img.dataset.lazy;
 
-				img.setAttribute(imageUrl);
+				img.setAttribute('src', imageUrl);
 
 				observer.disconnect(); // снимаем Observer
 			}
 		});
 	}, options);
-	io.observe(target);
+	io.observe(target); // указываем за кем следить
 };
 
 // Выбираем изображения из секции за которыми будет следить Observer
