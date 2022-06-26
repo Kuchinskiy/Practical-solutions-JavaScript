@@ -199,7 +199,7 @@ sections.forEach(section => {
 const lazyLoad = target => {
 	const options = {
 		rootMargin: '50px 0px',
-		treshold: 0.01
+		treshold: 0.07
 	};
 
 	const io = new IntersectionObserver((entries, observer) => {
@@ -207,6 +207,7 @@ const lazyLoad = target => {
 			// console.log(entry.target);
 			if (entry.isIntersecting) {
 				const img = entry.target;
+				// ссылка на оригинальное изображение хранится в атрибуте "data-lazy" получаем ее через dataset
 				const imageUrl = img.dataset.lazy;
 
 				img.setAttribute('src', imageUrl);
@@ -219,6 +220,7 @@ const lazyLoad = target => {
 };
 
 // Выбираем изображения из секции за которыми будет следить Observer
+// Создается целевой элемент, за которым наблюдает observer:
 const images = document.querySelectorAll('.section img');
 
 // Указываем конкретизируя за кем следить  Observer(у)
