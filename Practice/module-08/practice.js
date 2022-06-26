@@ -199,12 +199,15 @@ sections.forEach(section => {
 const lazyLoad = target => {
 	const options = {
 		rootMargin: '50px 0px',
-		treshold: 0.07
+		treshold: 0.7
 	};
 
+	// создаем наблюдатель
 	const io = new IntersectionObserver((entries, observer) => {
+		// для каждой записи-целевого элемента
 		entries.forEach(entry => {
 			// console.log(entry.target);
+	// если элемент является наблюдаемым
 			if (entry.isIntersecting) {
 				const img = entry.target;
 				// ссылка на оригинальное изображение хранится в атрибуте "data-lazy" получаем ее через dataset
@@ -212,7 +215,7 @@ const lazyLoad = target => {
 
 				img.setAttribute('src', imageUrl);
 
-				observer.disconnect(); // снимаем Observer
+				observer.disconnect(); // снимаем Observer прекращаем наблюдение
 			}
 		});
 	}, options);
@@ -224,6 +227,7 @@ const lazyLoad = target => {
 const images = document.querySelectorAll('.section img');
 
 // Указываем конкретизируя за кем следить  Observer(у)
+// с помощью цикла следим за всеми img на странице
 images.forEach(image => {
 	lazyLoad(image);
 });
