@@ -228,13 +228,26 @@ const lazyLoad = target => {
 
 // Выбираем изображения из секции за которыми будет следить Observer
 // Создается целевой элемент, за которым наблюдает observer:
-const images = document.querySelectorAll('.section img');
+const images = document.querySelectorAll('.section img[loading="lazy"]');
+console.log(images);
 
 // Указываем конкретизируя за кем следить  Observer(у)
 // с помощью цикла следим за всеми img на странице
 images.forEach(image => {
 	lazyLoad(image);
 });
+
+// Слушаем событие 'load' окончания загрузку картинки и потом вешаем класс анимации
+// с помощью современного API-->>> { once: true} встроеного в браузер снимаем слушателя события
+images.forEach(image => {
+	image.addEventListener('load', onImageLoaded, { once: true});
+});
+
+function onImageLoaded(evt) {
+	// console.log(evt.target);
+	evt.target.classList.add('appear');
+}
+
 
 // =============================================================
 /*

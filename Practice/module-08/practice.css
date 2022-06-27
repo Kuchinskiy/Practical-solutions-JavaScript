@@ -210,11 +210,18 @@ Intersection Observer(class) --Scrollspy -- event scroll
 	line-height: 1.5;
 }
 
-/* img {
+/* Animation image - вешая для этого класс */
+
+.feed img {
 	opacity: 0;
-	transition: opacity 300ms ease-in-out;
+	transition: all 700ms linear 900ms;
+	transform: translateX(-50%);
+	width: 510px;
+	height: 340px;
+	object-fit: cover;
 }
 
-img.fade-in {
+.feed img.appear {
+	transform: translateX(0);
 	opacity: 1;
-} */
+}
