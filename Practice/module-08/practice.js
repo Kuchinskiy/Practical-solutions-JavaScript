@@ -214,8 +214,8 @@ const lazyLoad = target => {
 			// если элемент является наблюдаемым
 			if (entry.isIntersecting) {
 				const img = entry.target;
-				// ссылка на оригинальное изображение хранится в атрибуте "data-lazy" получаем ее через dataset
-				const imageUrl = img.dataset.lazy;
+				// ссылка на оригинальное изображение хранится в атрибуте "data-src" получаем ее через dataset
+				const imageUrl = img.dataset.src;
 
 				img.setAttribute('src', imageUrl);
 
@@ -229,7 +229,21 @@ const lazyLoad = target => {
 // Выбираем изображения из секции за которыми будет следить Observer
 // Создается целевой элемент, за которым наблюдает observer:
 const images = document.querySelectorAll('.section img[loading="lazy"]');
-console.log(images);
+
+// Feature Detection
+// if ('loading' in HTMLImageElement.prototype) {
+// 	const images = document.querySelectorAll('.section img[loading="lazy"]');
+
+// 	images.forEach(img => {
+// 		img.src = img.dataset.src;
+// 	});
+// } else {
+// 	const script = document.createElement('script');
+// 	script.src = "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js";
+// 	script.integrity = "sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==";
+// 	script.crossorigin = "anonymous";
+// 	script.referrerpolicy= "no-referrer";
+// }
 
 // Указываем конкретизируя за кем следить  Observer(у)
 // с помощью цикла следим за всеми img на странице
