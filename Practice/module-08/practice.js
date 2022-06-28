@@ -197,8 +197,28 @@ sections.forEach(section => {
 
 // =============================================================
 /*
-Создаем Lazy-load  с помощью Intersection Observer
+Создаем Lazy-load  с помощью Intersection Observer!!!
+Подключаем библиотеку через Feature Detection, тем самым делаем 'lazy-load' кроссбраузерным
 */
+
+// Feature Detection
+if ('loading' in HTMLImageElement.prototype) {
+	const images = document.querySelectorAll('img[loading="lazy"]');
+
+	images.forEach(img => {
+		// добавляем атрибут 'src' динамически, изначально его нет в разметке
+		img.src = img.dataset.src;
+	});
+} else {
+	const script = document.createElement('script');
+	script.src = "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js";
+	script.integrity = "sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==";
+	script.crossorigin = "anonymous";
+	script.referrerpolicy= "no-referrer";
+
+	document.body.appendChild(script);
+}
+
 
 const lazyLoad = target => {
 	const options = {
@@ -228,22 +248,7 @@ const lazyLoad = target => {
 
 // Выбираем изображения из секции за которыми будет следить Observer
 // Создается целевой элемент, за которым наблюдает observer:
-const images = document.querySelectorAll('.section img[loading="lazy"]');
-
-// Feature Detection
-// if ('loading' in HTMLImageElement.prototype) {
-// 	const images = document.querySelectorAll('.section img[loading="lazy"]');
-
-// 	images.forEach(img => {
-// 		img.src = img.dataset.src;
-// 	});
-// } else {
-// 	const script = document.createElement('script');
-// 	script.src = "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js";
-// 	script.integrity = "sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==";
-// 	script.crossorigin = "anonymous";
-// 	script.referrerpolicy= "no-referrer";
-// }
+const images = document.querySelectorAll('.section img[data-src]');
 
 // Указываем конкретизируя за кем следить  Observer(у)
 // с помощью цикла следим за всеми img на странице
@@ -261,7 +266,6 @@ function onImageLoaded(evt) {
 	// console.log(evt.target);
 	evt.target.classList.add('appear');
 }
-
 
 // =============================================================
 /*
