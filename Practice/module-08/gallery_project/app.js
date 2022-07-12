@@ -1,3 +1,6 @@
+'use strict';
+console.log('💩');
+
 const galleryItems = [
 	{
 		preview:
@@ -63,3 +66,4 @@ const galleryItems = [
 		description: 'Lighthouse Coast Sea',
 	},
 ];
+
