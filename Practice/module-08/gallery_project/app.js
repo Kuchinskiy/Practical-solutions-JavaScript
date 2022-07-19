@@ -1,5 +1,6 @@
 console.log('💩');
 
+// array galleryItems
 export default [
 	{
 		preview:
