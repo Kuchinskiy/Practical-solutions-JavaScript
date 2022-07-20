@@ -1,27 +1,24 @@
 'use strict';
 
 import images from './app.js';
-// console.log(images);
 
 const refs = {
 	gallery: document.querySelector('.js-gallery'),
 	lightbox: document.querySelector('.js-lightbox'),
 	image: document.querySelector('.lightbox__image'),
-	// modalContent: document.querySelector('.lightbox__content'),
-	// btn: document.querySelector('[data-action="close-lightbox"]'),
-	// img: document.createElement('img'),
+	btn: document.querySelector('[data-action="close-lightbox"]'),
+	// Дополнительный функционал
+	backdrop: document.querySelector('.lightbox__overlay'),
 };
 
-refs.gallery.addEventListener('click', handleClickGalleryGetUrlBigImage);
-// refs.btn.addEventListener('click', handleClickOffModalBtn);
-// refs.modalContent.addEventListener('click', handleClickCloseModalContent);
-
-
+refs.gallery.addEventListener('click', handleClickGalleryGetUrlBigImageOpenModal);
+refs.btn.addEventListener('click', handleClickCloseModalBtn);
+refs.backdrop.addEventListener('click', handleClickBackdropCloseModal);
 
 // Реализация делегирования на галерее ul.js-gallery и получение url большого изображения.
 // Открытие модального окна по клику на элементе галереи.
 // Подмена значения атрибута src элемента img.lightbox__image.
-function handleClickGalleryGetUrlBigImage(evt) {
+function handleClickGalleryGetUrlBigImageOpenModal(evt) {
 	evt.preventDefault();
 
 	if (evt.target.nodeName === 'IMG') {
@@ -29,15 +26,29 @@ function handleClickGalleryGetUrlBigImage(evt) {
 
 		refs.image.src = evt.target.dataset.source;
 		refs.image.alt = evt.target.alt;
-	};
+	}
 }
 
-// function handleClickOffModalBtn(evt) {
+// Закрытие модального окна по клику на кнопку button[data-action="close-lightbox"].
+// Очистка значения атрибута src элемента img.lightbox__image. 
+/*
+Это необходимо для того, чтобы при следующем открытии модального окна, пока грузится изображение,
+мы не видели предыдущее.
+*/
+function handleClickCloseModalBtn(evt) {
+	if (evt.target.nodeName === 'BUTTON') {
+		refs.lightbox.classList.remove('is-open');
 
-// }
+		refs.image.src = '';
+		refs.image.alt = '';
+	}
+}
 
-// function handleClickCloseModalContent(evt) {
-
+// Дополнительный функционал для хорошей практики при работе с событиями
+// function handleClickBackdropCloseModal(evt) {
+// 	if (evt.target === evt.currentTarget) {
+// 		handleClickCloseModalBtn();
+// 	}
 // }
 
 /*
