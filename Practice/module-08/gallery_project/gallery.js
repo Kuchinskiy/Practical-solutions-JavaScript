@@ -5,20 +5,31 @@ import images from './app.js';
 
 const refs = {
 	gallery: document.querySelector('.js-gallery'),
-	// lightbox: document.querySelector('.js-lightbox'),
+	lightbox: document.querySelector('.js-lightbox'),
+	image: document.querySelector('.lightbox__image'),
 	// modalContent: document.querySelector('.lightbox__content'),
-	// image: document.querySelector('.lightbox__image'),
 	// btn: document.querySelector('[data-action="close-lightbox"]'),
 	// img: document.createElement('img'),
 };
 
-refs.gallery.addEventListener('click', handleClickUrlGallery);
+refs.gallery.addEventListener('click', handleClickGalleryGetUrlBigImage);
 // refs.btn.addEventListener('click', handleClickOffModalBtn);
 // refs.modalContent.addEventListener('click', handleClickCloseModalContent);
 
+
+
 // Реализация делегирования на галерее ul.js-gallery и получение url большого изображения.
-function handleClickUrlGallery(evt) {
+// Открытие модального окна по клику на элементе галереи.
+// Подмена значения атрибута src элемента img.lightbox__image.
+function handleClickGalleryGetUrlBigImage(evt) {
 	evt.preventDefault();
+
+	if (evt.target.nodeName === 'IMG') {
+		refs.lightbox.classList.add('is-open');
+
+		refs.image.src = evt.target.dataset.source;
+		refs.image.alt = evt.target.alt;
+	};
 }
 
 // function handleClickOffModalBtn(evt) {
@@ -51,8 +62,6 @@ const createImgElemMarkup = ({ preview, original, description }) => {
 
 const galleryMarkup = images.map(createImgElemMarkup).join('');
 refs.gallery.insertAdjacentHTML('afterbegin', galleryMarkup);
-
-// refs.lightbox.classList.add('is-open');
 
 
 /*
