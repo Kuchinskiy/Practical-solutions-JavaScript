@@ -45,11 +45,14 @@ function handleClickCloseModalBtn(evt) {
 }
 
 // Дополнительный функционал для хорошей практики при работе с событиями
-// function handleClickBackdropCloseModal(evt) {
-// 	if (evt.target === evt.currentTarget) {
-// 		handleClickCloseModalBtn();
-// 	}
-// }
+function handleClickBackdropCloseModal(evt) {
+	if (evt.target === evt.currentTarget) {
+		refs.lightbox.classList.remove('is-open');
+
+		refs.image.src = '';
+		refs.image.alt = '';
+	}
+}
 
 /*
 Варинт - 1
