@@ -15,6 +15,9 @@ refs.gallery.addEventListener('click', handleClickGalleryGetUrlBigImageOpenModal
 refs.btn.addEventListener('click', handleClickCloseModalBtn);
 refs.backdrop.addEventListener('click', handleClickBackdropCloseModal);
 
+
+
+
 // Реализация делегирования на галерее ul.js-gallery и получение url большого изображения.
 // Открытие модального окна по клику на элементе галереи.
 // Подмена значения атрибута src элемента img.lightbox__image.
@@ -27,6 +30,7 @@ function handleClickGalleryGetUrlBigImageOpenModal(evt) {
 		refs.image.src = evt.target.dataset.source;
 		refs.image.alt = evt.target.alt;
 	}
+	window.addEventListener('keydown', handleClickEscKeyPress);
 }
 
 // Закрытие модального окна по клику на кнопку button[data-action="close-lightbox"].
@@ -35,23 +39,33 @@ function handleClickGalleryGetUrlBigImageOpenModal(evt) {
 Это необходимо для того, чтобы при следующем открытии модального окна, пока грузится изображение,
 мы не видели предыдущее.
 */
-function handleClickCloseModalBtn(evt) {
-	if (evt.target.nodeName === 'BUTTON') {
-		refs.lightbox.classList.remove('is-open');
+function handleClickCloseModalBtn() {
+	paramsRemoveClassSrcAlt();
+	window.removeEventListener('keydown', handleClickEscKeyPress);
+}
 
-		refs.image.src = '';
-		refs.image.alt = '';
+// Закрытие модального окна по клику на div.lightbox__overlay нажатие в backdrop
+function handleClickBackdropCloseModal(evt) {
+	if (evt.target === evt.currentTarget) {
+		paramsRemoveClassSrcAlt();
 	}
 }
 
-// Дополнительный функционал для хорошей практики при работе с событиями
-function handleClickBackdropCloseModal(evt) {
-	if (evt.target === evt.currentTarget) {
-		refs.lightbox.classList.remove('is-open');
+// Закрытие модального окна по нажатию клавиши ESC.
+function handleClickEscKeyPress(evt) {
+	const ESC_KEY_PRESS = 'Escape';
+
+	if (evt.code === ESC_KEY_PRESS) {
+		handleClickCloseModalBtn();
+	}
+}
+
+// Снятие класса 'is-open' и очистка src с alt
+function paramsRemoveClassSrcAlt() {
+	refs.lightbox.classList.remove('is-open');
 
 		refs.image.src = '';
 		refs.image.alt = '';
-	}
 }
 
 /*
