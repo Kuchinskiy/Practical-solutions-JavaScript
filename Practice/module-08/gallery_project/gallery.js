@@ -16,8 +16,6 @@ refs.btn.addEventListener('click', handleClickCloseModalBtn);
 refs.backdrop.addEventListener('click', handleClickBackdropCloseModal);
 
 
-
-
 // Реализация делегирования на галерее ul.js-gallery и получение url большого изображения.
 // Открытие модального окна по клику на элементе галереи.
 // Подмена значения атрибута src элемента img.lightbox__image.
