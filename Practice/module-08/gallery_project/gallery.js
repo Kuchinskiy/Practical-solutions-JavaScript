@@ -38,14 +38,14 @@ function handleClickGalleryGetUrlBigImageOpenModal(evt) {
 мы не видели предыдущее.
 */
 function handleClickCloseModalBtn() {
-	paramsRemoveClassSrcAlt();
+	paramsRemoveClassCleanSrcAlt();
 	window.removeEventListener('keydown', handleClickEscKeyPress);
 }
 
 // Закрытие модального окна по клику на div.lightbox__overlay нажатие в backdrop
 function handleClickBackdropCloseModal(evt) {
 	if (evt.target === evt.currentTarget) {
-		paramsRemoveClassSrcAlt();
+		paramsRemoveClassCleanSrcAlt();
 	}
 }
 
@@ -59,7 +59,7 @@ function handleClickEscKeyPress(evt) {
 }
 
 // Снятие класса 'is-open' и очистка src с alt
-function paramsRemoveClassSrcAlt() {
+function paramsRemoveClassCleanSrcAlt() {
 	refs.lightbox.classList.remove('is-open');
 
 		refs.image.src = '';
