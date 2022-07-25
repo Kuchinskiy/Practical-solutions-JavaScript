@@ -37,6 +37,7 @@ function handleClickGalleryGetUrlBigImageOpenModal(evt) {
 Это необходимо для того, чтобы при следующем открытии модального окна, пока грузится изображение,
 мы не видели предыдущее.
 */
+// Доплнительный функционал, закрытие модального окна через Esc
 function handleClickCloseModalBtn() {
 	paramsRemoveClassCleanSrcAlt();
 	window.removeEventListener('keydown', handleClickEscKeyPress);
