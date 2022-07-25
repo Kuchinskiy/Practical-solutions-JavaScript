@@ -29,6 +29,7 @@ function handleClickGalleryGetUrlBigImageOpenModal(evt) {
 		refs.image.alt = evt.target.alt;
 	}
 	window.addEventListener('keydown', handleClickEscKeyPress);
+	window.addEventListener('keydown', handleClicBtnkArrowRightAndArrowLeft);
 }
 
 // Закрытие модального окна по клику на кнопку button[data-action="close-lightbox"].
@@ -41,6 +42,7 @@ function handleClickGalleryGetUrlBigImageOpenModal(evt) {
 function handleClickCloseModalBtn() {
 	paramsRemoveClassCleanSrcAlt();
 	window.removeEventListener('keydown', handleClickEscKeyPress);
+	window.removeEventListener('keydown', handleClicBtnkArrowRightAndArrowLeft);
 }
 
 // Закрытие модального окна по клику на div.lightbox__overlay нажатие в backdrop
@@ -50,8 +52,10 @@ function handleClickBackdropCloseModal(evt) {
 	}
 }
 
+// Дополнительный функционал
 // Закрытие модального окна по нажатию клавиши ESC.
 function handleClickEscKeyPress(evt) {
+	console.log(evt.code);
 	const ESC_KEY_PRESS = 'Escape';
 
 	if (evt.code === ESC_KEY_PRESS) {
@@ -65,6 +69,46 @@ function paramsRemoveClassCleanSrcAlt() {
 
 		refs.image.src = '';
 		refs.image.alt = '';
+}
+
+// Дополнительный функционал
+// Пролистывание изображений галереи в открытом модальном окне клавишами "влево" и "вправо".
+let image;
+
+function handleClicBtnkArrowRightAndArrowLeft(evt) {
+	if (evt.code === 'ArrowRight') {
+		handleClickNextImg(images); 
+	}
+
+	if (evt.code === 'ArrowLeft') {
+		handleClickPrevImg(images); 
+	}
+}
+
+function handleClickNextImg(img) {
+	const gallery = img.map(item => item.original);
+	const index = gallery.indexOf(image);
+
+	if (index === gallery.length - 1) {
+		return;
+	}
+
+	let nextIdxImg = index + 1;
+	refs.image.src = gallery[nextIdxImg];
+	image = gallery[nextIdxImg];
+}
+
+function handleClickPrevImg(img) {
+	const gallery = img.map(item => item.original);
+	const index = gallery.indexOf(image);
+
+	if (index === 0) {
+		return;
+	}
+
+	let nextIdxImg = index - 1;
+	refs.image.src = gallery[nextIdxImg];
+	image = gallery[nextIdxImg];
 }
 
 /*
