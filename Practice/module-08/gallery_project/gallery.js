@@ -77,7 +77,7 @@ let image;
 
 function handleClicBtnkArrowRightAndArrowLeft(evt) {
 	if (evt.code === 'ArrowRight') {
-		handleClickNextImg(images); 
+		handleClickNextImg(images);
 	}
 
 	if (evt.code === 'ArrowLeft') {
@@ -106,9 +106,9 @@ function handleClickPrevImg(img) {
 		return;
 	}
 
-	let nextIdxImg = index - 1;
-	refs.image.src = gallery[nextIdxImg];
-	image = gallery[nextIdxImg];
+	let prevIdxImg = index - 1;
+	refs.image.src = gallery[prevIdxImg];
+	image = gallery[prevIdxImg];
 }
 
 /*
