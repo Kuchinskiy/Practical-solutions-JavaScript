@@ -115,17 +115,20 @@ function handleClickPrevImg(img) {
 Варинт - 1
 Создание и рендер разметки по массиву данных galleryItems из app.js и предоставленному шаблону.
 */
-const createImgElemMarkup = ({ preview, original, description }) => {
+const createImgElemMarkup = ({ original, description }) => {
 	return `<li class="gallery__item">
 	<a
 	class="gallery__link"
 	href="${original}"
 	>
 	<img
+	loading="lazy"
 		class="gallery__image"
-		src="${preview}"
+		src=""
 		data-source="${original}"
 		alt="${description}"
+		width="510"
+		height="340"
 	/>
 	</a>
 </li>`;
@@ -133,6 +136,37 @@ const createImgElemMarkup = ({ preview, original, description }) => {
 
 const galleryMarkup = images.map(createImgElemMarkup).join('');
 refs.gallery.insertAdjacentHTML('afterbegin', galleryMarkup);
+
+// Lazy-load -->>> Intersection Observer
+// Дополнительный функционал
+const lazyLoad = target => {
+	const option = {
+		rootMargin: '50px 0px',
+		treshold: 0.02
+	};
+
+	const io = new IntersectionObserver((entries, observer) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				const img = entry.target;
+				const imageUrl = img.dataset.source;
+
+				img.setAttribute('src', imageUrl);
+
+				observer.disconnect();
+			}
+		});
+	}, option);
+
+	io.observe(target);
+};
+
+const img = document.querySelectorAll('.gallery__image');
+
+img.forEach(item => {
+	lazyLoad(item);
+});
+
 
 
 /*
