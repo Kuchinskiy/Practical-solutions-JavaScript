@@ -124,7 +124,7 @@ const createImgElemMarkup = ({ original, description }) => {
 	<img
 	loading="lazy"
 		class="gallery__image"
-		src=""
+		src="https://via.placeholder.com/510x340/258DC8/E0F6FD"
 		data-source="${original}"
 		alt="${description}"
 		width="510"
