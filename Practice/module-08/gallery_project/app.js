@@ -65,4 +65,11 @@ export default [
 			'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
 		description: 'Lighthouse Coast Sea',
 	},
+	{
+		preview:
+			'https://cdn.pixabay.com/photo/2022/02/15/13/00/building-7014904__340.jpg',
+		original:
+			'https://cdn.pixabay.com/photo/2022/02/15/13/00/building-7014904_1280.jpg',
+		description: 'London Bridge',
+	},
 ];
